@@ -11,12 +11,14 @@
 		var app = angular.module( 'myApp', [] );
 		app.controller( 'MyCtrl', [ '$scope', '$http', function( $scope, $http ) {
 			$scope.links = [
-				{ 'name': 'blocknot.es', 'url': 'http://blocknot.es' }
+				{ 'name': 'blocknot.es', 'url': 'http://blocknot.es', 'desc': 'personal website' },
+				{ 'name': 'github.com', 'url': 'https://github.com/blocknotes', 'desc': 'GitHub projects' },
+				{ 'name': 'stackoverflow.com', 'url': 'http://stackoverflow.com/users/2627246/mat', 'desc': 'stackoverflow profile' },
 			];
 		}]);
 	</script>
 	<style>
-		/* body { background: #f0f0f0; padding: 0; } */
+		body { padding: 15px 0; }
 	</style>
 </head>
 <body ng-controller="MyCtrl">
@@ -24,7 +26,6 @@
 		<div class="jumbotron">
 			<h1>blocknot.es</h1>
 			<p>Just a reference site</p>
-			<!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
 		</div>
 		<div class="panel panel-info">
 			<div class="panel-heading">Links</div>
@@ -33,7 +34,7 @@
 			</div>
 			<ul class="list-group">
 				<li class="list-group-item" ng-repeat="link in links">
-					<a ng-href="{{link.url}}" target="_blank">{{link.name}}</a>
+					<a ng-href="{{link.url}}" target="_blank">{{link.name}}</a>: {{link.desc}}
 				</li>
 			</ul>
 		</div>
