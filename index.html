@@ -1,1 +1,20 @@
-Working on...
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8" />
+	<title>blocknot.es</title>
+	<script src="bower_components/angular/angular.js"></script>
+	<script>
+		var app = angular.module( 'myApp', [] );
+		app.controller( 'MyCtrl', [ '$scope', '$http', function( $scope, $http ) {
+			// ...
+		}]);
+	</script>
+	<style>
+		body { background: #f0f0f0; padding: 0; }
+	</style>
+</head>
+<body ng-controller="MyCtrl">
+	...
+</body>
+</html>
