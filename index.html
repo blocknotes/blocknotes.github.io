@@ -10,19 +10,32 @@
 	<script>
 		var app = angular.module( 'myApp', [] );
 		app.controller( 'MyCtrl', [ '$scope', '$http', function( $scope, $http ) {
-			// ...
+			$scope.links = [
+				{ 'name': 'blocknot.es', 'url': 'http://blocknot.es' }
+			];
 		}]);
 	</script>
 	<style>
-		body { background: #f0f0f0; padding: 0; }
+		/* body { background: #f0f0f0; padding: 0; } */
 	</style>
 </head>
 <body ng-controller="MyCtrl">
 	<div class="container">
 		<div class="jumbotron">
 			<h1>blocknot.es</h1>
-			<p>...</p>
+			<p>Just a reference site</p>
 			<!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+		</div>
+		<div class="panel panel-info">
+			<div class="panel-heading">Links</div>
+			<div class="panel-body">
+				<p>My personal links</p>
+			</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="link in links">
+					<a ng-href="{{link.name}}" target="_blank">{{link.url}}</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </body>
