@@ -1,0 +1,11 @@
+# project
+__misc
+_site
+.jekyll-metadata
+.sass-cache
+.vagrant
+
+# general
+.DS_Store
+Thumbs.db
+ehthumbs.db
