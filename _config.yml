@@ -24,7 +24,8 @@ github_username:  blocknotes
 
 # Build settings
 markdown: kramdown
-theme: minima
+# theme: minima
+theme: jekyll-theme-architect
 gems:
   - jekyll-feed
 exclude:
