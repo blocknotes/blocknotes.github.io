@@ -4,8 +4,8 @@
 # url is the full website URL
 # baseurl is the website's URL without the hostname
 
-# url: "https://www.blocknot.es"
-url: ""
+# url: "https://blocknotes.github.io"
+url: "https://www.blocknot.es"
 baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
