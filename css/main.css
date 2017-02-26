@@ -683,12 +683,13 @@ td.gutter {
 
 /* --- MY --- */
 body {
-  padding-bottom: 200px;
+  padding-bottom: 120px;
 }
 
 #adsense {
+  background: rgba( 0, 0, 0, 0.3 );
   display: block;
-  height: 200px;
+  height: 120px;
   position: fixed;
   left: 0;
   bottom: 0;
