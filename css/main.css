@@ -680,3 +680,33 @@ td.gutter {
 #social-share-section {
   margin-bottom: 30px;
 }
+
+/* --- MY --- */
+#photos {
+  column-count: 4;
+  column-gap: 2px;
+  -moz-column-count: 4;
+  -moz-column-gap: 2px;
+}
+#photos > .gallery-item {
+  display: block;
+  margin-bottom: 2px;
+  padding: 0;
+}
+#photos > .gallery-item img {
+  width: 100%;
+}
+
+@media screen and (max-width: 959px) {
+  #photos {
+    column-count: 3;
+    -moz-column-count: 3;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  #photos {
+    column-count: 2;
+    -moz-column-count: 2;
+  }
+}

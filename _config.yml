@@ -24,9 +24,9 @@ description: A Developer's Journey
 
 # List of links in the navigation bar
 navbar-links:
-  # Projects:
-  #   - On Web: "web"
-  #   - On Android: "android"
+  Projects:
+    - Web components: "web/components"
+    - Android app: "android/app"
   About Me: "about-me"
 
 # Image to show in the navigation bar - image must be a square (width = height)
