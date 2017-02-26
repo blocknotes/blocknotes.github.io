@@ -123,6 +123,8 @@ kramdown:
 # liquid:
 #   error_mode: strict
 
+google_analytics: UA-39592458-1
+
 # Default YAML values (more information on Jekyll's site)
 defaults:
   -
