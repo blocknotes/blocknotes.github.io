@@ -1,13 +1,8 @@
 ---
 title: 'Test: Rails gem responsive-images'
 image: /img/img-responsive.jpg
-taxonomy:
-    category:
-        - tests
-    tag:
-        - ruby
-        - rails
-        - images
+categories: tests
+tags: ruby rails images
 ---
 
 In the last days I made some tests to serve different images based on the browsing device and I found a nice Ruby Gem: <a href="https://github.com/johnkoht/responsive-images" target="_blank">responsive-images</a>

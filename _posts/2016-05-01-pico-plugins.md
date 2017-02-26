@@ -1,12 +1,8 @@
 ---
 title: 'New projects: pico plugins'
 image: /img/img-pico-plugins.png
-taxonomy:
-    category:
-        - project
-    tag:
-        - web
-        - php
+categories: project
+tags: web php
 ---
 
 Good News, Everyone!

@@ -1,12 +1,8 @@
 ---
 title: 'A glance at RubyMotion'
 image: /img/img-rubymotion.png
-taxonomy:
-    category:
-        - tests
-    tag:
-        - ruby
-        - mobile
+categories: tests
+tags: ruby mobile
 ---
 
 > Write cross-platform apps for iOS, Android and OS X in Ruby
