@@ -682,6 +682,16 @@ td.gutter {
 }
 
 /* --- MY --- */
+
+#adsense {
+  display: block;
+  height: 80%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+}
+
 #photos {
   column-count: 4;
   column-gap: 2px;
