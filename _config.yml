@@ -206,6 +206,7 @@ prose:
 
 gems:
   - jekyll-paginate
+  - jekyll-sitemap
 
 # --- #
 

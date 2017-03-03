@@ -692,10 +692,14 @@ body {
   border-top: 1px solid rgba( 0, 0, 0, 0.3 );
   display: block;
   height: 120px;
+  padding-top: 15px;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+}
+#adsense > ins {
+  text-align: center;
 }
 
 #photos {
