@@ -682,6 +682,14 @@ td.gutter {
 }
 
 /* --- MY --- */
+h3 {
+  margin-bottom: 30px;
+}
+
+h4 {
+  margin-top: 20px;
+}
+
 body {
   padding-bottom: 120px;
 }
