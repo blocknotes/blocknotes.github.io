@@ -725,6 +725,19 @@ body {
   width: 100%;
 }
 
+.twitter-box {
+  border: 1px solid #cde;
+  position: fixed;
+  right: 1px;
+  top: 92px;
+}
+
+@media screen and (max-width: 1200px) {
+  .twitter-box {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 959px) {
   #photos {
     column-count: 3;
