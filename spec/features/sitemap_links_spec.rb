@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'check links in sitemap', type: :feature do
+describe 'check links in sitemap', type: :feature, skip: true do
   links = File.readlines('_site/sitemap.xml').select { |line| line.start_with? '<loc>' }
   links.each do |loc|
     tokens = loc.match(%r{<loc>(.+)</loc>})
