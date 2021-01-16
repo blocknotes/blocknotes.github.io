@@ -1,11 +1,11 @@
 ---
 title: Hackintosh El Capitan on hp-probook 440 g3
-image: /img/img-hackintosh-el-capitan-on-hp-probook-440-g3.jpg
-categories: osx
+image: /assets/img/img-news.png
 tags: hardware
+excerpt: I have just finished to install OSX 10.11 on my HP probook
 ---
 
-I have just finished to install OSX 10.11 on my notebook.
+I have just finished to install OSX 10.11 (El Capitan) on my HP notebook.
 
 It works! Almost :) currently: WiFi not available
 
@@ -38,4 +38,4 @@ Update:
 
 Searching online it seems that my wifi adapter can't actually work with Hackintosh. I solved the problem using a mini USB WiFi adapter (Ralink RT5370)
 
-![](/img/img-hackintosh-el-capitan-on-hp-probook-440-g3.jpg)
+![screenshot](/assets/img/screenshot-hackintosh-el-capitan-on-hp-probook-440-g3.jpg)

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Tag Index</title>
+
+  
+  <meta name="author" content="Mattia Roccoberton">
+  
+
+  <meta name="description" content="{% assign date_format = site.date_format | default: &quot;%B %-d, %Y&quot; %} {%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:',' | sort -%} {%- for tag...">
+
+  
+
+  
+  <meta name="keywords" content="ruby on rails,ruby language,development">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="blocknot.es" href="https://www.blocknot.es/feed.xml">
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39592458-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-39592458-1');
+</script>
+
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+      <link rel="stylesheet" href="/assets/css/main.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="blocknot.es">
+  <meta property="og:title" content="Tag Index">
+  <meta property="og:description" content="{% assign date_format = site.date_format | default: &quot;%B %-d, %Y&quot; %} {%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:',' | sort -%} {%- for tag...">
+
+  
+  <meta property="og:image" content="https://www.blocknot.es/assets/img/logo_sm.png">
+  
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.blocknot.es/tags/">
+  <link rel="canonical" href="https://www.blocknot.es/tags/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@too_sleepy">
+  <meta name="twitter:creator" content="@too_sleepy">
+
+  <meta property="twitter:title" content="Tag Index">
+  <meta property="twitter:description" content="{% assign date_format = site.date_format | default: &quot;%B %-d, %Y&quot; %} {%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:',' | sort -%} {%- for tag...">
+
+  
+  <meta name="twitter:image" content="https://www.blocknot.es/assets/img/logo_sm.png">
+  
+
+  
+
+
+  
+
+  
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="https://www.blocknot.es/">blocknot.es</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My projects</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="https://github.com/blocknotes?utf8=%E2%9C%93&tab=repositories&type=source">Github projects</a>
+                  <a class="dropdown-item" href="/ruby/gems">Ruby gems</a>
+                  <a class="dropdown-item" href="/android/app">Android app</a>
+            </div>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/about-me">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="https://www.blocknot.es/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/logo_sm.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="page-heading">
+          <h1>Tag Index</h1>
+          
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md " role="main">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+      
+
+      <a href="#admin" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;admin&nbsp;(1)</a><a href="#crystal" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;crystal&nbsp;(4)</a><a href="#hardware" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;hardware&nbsp;(1)</a><a href="#javascript" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;javascript&nbsp;(1)</a><a href="#mobile" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;mobile&nbsp;(1)</a><a href="#news" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;news&nbsp;(2)</a><a href="#php" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;php&nbsp;(3)</a><a href="#project" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;project&nbsp;(19)</a><a href="#rails" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;rails&nbsp;(7)</a><a href="#rspec" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;rspec&nbsp;(1)</a><a href="#ruby" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;ruby&nbsp;(18)</a><a href="#testing" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;testing&nbsp;(2)</a><a href="#vue.js" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;vue.js&nbsp;(1)</a><a href="#web" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;web&nbsp;(7)</a><a href="#website" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;website&nbsp;(1)</a><div id="full-tags-list"><h2 id="admin" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;admin&nbsp;(1)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2020-09-01-administrate-materialize-theme/">Administrate Materialize Theme</a>
+                <div class="entry-date">
+                    <time datetime="2020-09-01T00:00:00+02:00">September 1, 2020</time>
+                </div>
+            </div></div><h2 id="crystal" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;crystal&nbsp;(4)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2017-04-18-crystal-projects/">Crystal projects</a>
+                <div class="entry-date">
+                    <time datetime="2017-04-18T00:00:00+02:00">April 18, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-01-15-kemal-rest-api/">Kemal REST API library</a>
+                <div class="entry-date">
+                    <time datetime="2017-01-15T00:00:00+01:00">January 15, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-01-01-magickwand-crystal/">magickwand for Crystal</a>
+                <div class="entry-date">
+                    <time datetime="2017-01-01T00:00:00+01:00">January 1, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-12-31-wkhtmltopdf-crystal/">wkhtmltopdf for Crystal</a>
+                <div class="entry-date">
+                    <time datetime="2016-12-31T00:00:00+01:00">December 31, 2016</time>
+                </div>
+            </div></div><h2 id="hardware" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;hardware&nbsp;(1)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2016-05-16-hackintosh-el-capitan-on-hp-probook-440-g3/">Hackintosh El Capitan on hp-probook 440 g3</a>
+                <div class="entry-date">
+                    <time datetime="2016-05-16T00:00:00+02:00">May 16, 2016</time>
+                </div>
+            </div></div><h2 id="javascript" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;javascript&nbsp;(1)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2016-06-15-phantomjs-sitemap-generator/">New project: PhantomJS sitemap generator</a>
+                <div class="entry-date">
+                    <time datetime="2016-06-15T00:00:00+02:00">June 15, 2016</time>
+                </div>
+            </div></div><h2 id="mobile" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;mobile&nbsp;(1)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2016-08-04-ruby-motion/">A glance at RubyMotion</a>
+                <div class="entry-date">
+                    <time datetime="2016-08-04T00:00:00+02:00">August 4, 2016</time>
+                </div>
+            </div></div><h2 id="news" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;news&nbsp;(2)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2017-02-26-site-restyle-with-jekyll/">Site restyle with Jekyll</a>
+                <div class="entry-date">
+                    <time datetime="2017-02-26T00:00:00+01:00">February 26, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-04-25-grav-cms-site/">New site</a>
+                <div class="entry-date">
+                    <time datetime="2016-04-25T00:00:00+02:00">April 25, 2016</time>
+                </div>
+            </div></div><h2 id="php" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;php&nbsp;(3)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2016-05-01-pico-plugins/">New projects: pico plugins</a>
+                <div class="entry-date">
+                    <time datetime="2016-05-01T00:00:00+02:00">May 1, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2015-11-29-wordpress-plugins/">WordPress plugins</a>
+                <div class="entry-date">
+                    <time datetime="2015-11-29T00:00:00+01:00">November 29, 2015</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2014-04-10-cakephp-components/">CakePHP Components</a>
+                <div class="entry-date">
+                    <time datetime="2014-04-10T00:00:00+02:00">April 10, 2014</time>
+                </div>
+            </div></div><h2 id="project" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;project&nbsp;(19)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2020-09-01-administrate-materialize-theme/">Administrate Materialize Theme</a>
+                <div class="entry-date">
+                    <time datetime="2020-09-01T00:00:00+02:00">September 1, 2020</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2020-05-02-telegram-bot-server-in-ruby/">A Telegram bot server in Ruby</a>
+                <div class="entry-date">
+                    <time datetime="2020-05-02T00:00:00+02:00">May 2, 2020</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2020-02-21-reverse-coverage/">Reverse Coverage: Find which tests execute which lines of code</a>
+                <div class="entry-date">
+                    <time datetime="2020-02-21T00:00:00+01:00">February 21, 2020</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2019-11-10-first-steps-with-opal/">First steps with Opal 1.0</a>
+                <div class="entry-date">
+                    <time datetime="2019-11-10T00:00:00+01:00">November 10, 2019</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2018-09-02-active-admin-plugins/">Active Admin plugins</a>
+                <div class="entry-date">
+                    <time datetime="2018-09-02T00:00:00+02:00">September 2, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2018-04-25-grape-projects/">Grape projects</a>
+                <div class="entry-date">
+                    <time datetime="2018-04-25T00:00:00+02:00">April 25, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2018-04-02-ruby-http-mock-server/">Ruby http-mock-server</a>
+                <div class="entry-date">
+                    <time datetime="2018-04-02T00:00:00+02:00">April 2, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-11-11-rails-components/">Rails components</a>
+                <div class="entry-date">
+                    <time datetime="2017-11-11T00:00:00+01:00">November 11, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-09-02-some-new-ruby-projects/">Some new Ruby projects</a>
+                <div class="entry-date">
+                    <time datetime="2017-09-02T00:00:00+02:00">September 2, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-07-01-rails-admin-plugins/">RailsAdmin plugins</a>
+                <div class="entry-date">
+                    <time datetime="2017-07-01T00:00:00+02:00">July 1, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-04-18-crystal-projects/">Crystal projects</a>
+                <div class="entry-date">
+                    <time datetime="2017-04-18T00:00:00+02:00">April 18, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-01-15-kemal-rest-api/">Kemal REST API library</a>
+                <div class="entry-date">
+                    <time datetime="2017-01-15T00:00:00+01:00">January 15, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-01-01-magickwand-crystal/">magickwand for Crystal</a>
+                <div class="entry-date">
+                    <time datetime="2017-01-01T00:00:00+01:00">January 1, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-12-31-wkhtmltopdf-crystal/">wkhtmltopdf for Crystal</a>
+                <div class="entry-date">
+                    <time datetime="2016-12-31T00:00:00+01:00">December 31, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-11-12-sinatra-rest-api/">sinatra-rest-api: Sinatra API generator</a>
+                <div class="entry-date">
+                    <time datetime="2016-11-12T00:00:00+01:00">November 12, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-10-10-pinfo-rails-information-from-a-rails-project/">pinfo-rails: information from a Rails project</a>
+                <div class="entry-date">
+                    <time datetime="2016-10-10T00:00:00+02:00">October 10, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-05-01-pico-plugins/">New projects: pico plugins</a>
+                <div class="entry-date">
+                    <time datetime="2016-05-01T00:00:00+02:00">May 1, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2015-11-29-wordpress-plugins/">WordPress plugins</a>
+                <div class="entry-date">
+                    <time datetime="2015-11-29T00:00:00+01:00">November 29, 2015</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2014-04-10-cakephp-components/">CakePHP Components</a>
+                <div class="entry-date">
+                    <time datetime="2014-04-10T00:00:00+02:00">April 10, 2014</time>
+                </div>
+            </div></div><h2 id="rails" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;rails&nbsp;(7)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2021-01-05-vagrant-rails-6-dev-environment/">Vagrant Rails 6 dev environment setup</a>
+                <div class="entry-date">
+                    <time datetime="2021-01-05T00:00:00+01:00">January 5, 2021</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2019-08-02-testing-rails-book-review/">Rails testing tips for newcomers</a>
+                <div class="entry-date">
+                    <time datetime="2019-08-02T00:00:00+02:00">August 2, 2019</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2019-06-12-rails-middleware-to-change-log-level/">A Rails middleware to change log level at runtime</a>
+                <div class="entry-date">
+                    <time datetime="2019-06-12T00:00:00+02:00">June 12, 2019</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-11-11-rails-components/">Rails components</a>
+                <div class="entry-date">
+                    <time datetime="2017-11-11T00:00:00+01:00">November 11, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-07-01-rails-admin-plugins/">RailsAdmin plugins</a>
+                <div class="entry-date">
+                    <time datetime="2017-07-01T00:00:00+02:00">July 1, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-10-10-pinfo-rails-information-from-a-rails-project/">pinfo-rails: information from a Rails project</a>
+                <div class="entry-date">
+                    <time datetime="2016-10-10T00:00:00+02:00">October 10, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-09-30-starter-project-rails-vue-example/">Starter project: Rails Vue example</a>
+                <div class="entry-date">
+                    <time datetime="2016-09-30T00:00:00+02:00">September 30, 2016</time>
+                </div>
+            </div></div><h2 id="rspec" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;rspec&nbsp;(1)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2020-02-21-reverse-coverage/">Reverse Coverage: Find which tests execute which lines of code</a>
+                <div class="entry-date">
+                    <time datetime="2020-02-21T00:00:00+01:00">February 21, 2020</time>
+                </div>
+            </div></div><h2 id="ruby" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;ruby&nbsp;(18)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2021-01-05-vagrant-rails-6-dev-environment/">Vagrant Rails 6 dev environment setup</a>
+                <div class="entry-date">
+                    <time datetime="2021-01-05T00:00:00+01:00">January 5, 2021</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2020-09-01-administrate-materialize-theme/">Administrate Materialize Theme</a>
+                <div class="entry-date">
+                    <time datetime="2020-09-01T00:00:00+02:00">September 1, 2020</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2020-05-02-telegram-bot-server-in-ruby/">A Telegram bot server in Ruby</a>
+                <div class="entry-date">
+                    <time datetime="2020-05-02T00:00:00+02:00">May 2, 2020</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2020-02-21-reverse-coverage/">Reverse Coverage: Find which tests execute which lines of code</a>
+                <div class="entry-date">
+                    <time datetime="2020-02-21T00:00:00+01:00">February 21, 2020</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2019-11-10-first-steps-with-opal/">First steps with Opal 1.0</a>
+                <div class="entry-date">
+                    <time datetime="2019-11-10T00:00:00+01:00">November 10, 2019</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2019-08-02-testing-rails-book-review/">Rails testing tips for newcomers</a>
+                <div class="entry-date">
+                    <time datetime="2019-08-02T00:00:00+02:00">August 2, 2019</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2019-06-12-rails-middleware-to-change-log-level/">A Rails middleware to change log level at runtime</a>
+                <div class="entry-date">
+                    <time datetime="2019-06-12T00:00:00+02:00">June 12, 2019</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2018-09-02-active-admin-plugins/">Active Admin plugins</a>
+                <div class="entry-date">
+                    <time datetime="2018-09-02T00:00:00+02:00">September 2, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2018-04-25-grape-projects/">Grape projects</a>
+                <div class="entry-date">
+                    <time datetime="2018-04-25T00:00:00+02:00">April 25, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2018-04-02-ruby-http-mock-server/">Ruby http-mock-server</a>
+                <div class="entry-date">
+                    <time datetime="2018-04-02T00:00:00+02:00">April 2, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-11-11-rails-components/">Rails components</a>
+                <div class="entry-date">
+                    <time datetime="2017-11-11T00:00:00+01:00">November 11, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-09-02-some-new-ruby-projects/">Some new Ruby projects</a>
+                <div class="entry-date">
+                    <time datetime="2017-09-02T00:00:00+02:00">September 2, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-07-01-rails-admin-plugins/">RailsAdmin plugins</a>
+                <div class="entry-date">
+                    <time datetime="2017-07-01T00:00:00+02:00">July 1, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-02-26-site-restyle-with-jekyll/">Site restyle with Jekyll</a>
+                <div class="entry-date">
+                    <time datetime="2017-02-26T00:00:00+01:00">February 26, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-11-12-sinatra-rest-api/">sinatra-rest-api: Sinatra API generator</a>
+                <div class="entry-date">
+                    <time datetime="2016-11-12T00:00:00+01:00">November 12, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-10-10-pinfo-rails-information-from-a-rails-project/">pinfo-rails: information from a Rails project</a>
+                <div class="entry-date">
+                    <time datetime="2016-10-10T00:00:00+02:00">October 10, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-09-30-starter-project-rails-vue-example/">Starter project: Rails Vue example</a>
+                <div class="entry-date">
+                    <time datetime="2016-09-30T00:00:00+02:00">September 30, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-08-04-ruby-motion/">A glance at RubyMotion</a>
+                <div class="entry-date">
+                    <time datetime="2016-08-04T00:00:00+02:00">August 4, 2016</time>
+                </div>
+            </div></div><h2 id="testing" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;testing&nbsp;(2)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2020-02-21-reverse-coverage/">Reverse Coverage: Find which tests execute which lines of code</a>
+                <div class="entry-date">
+                    <time datetime="2020-02-21T00:00:00+01:00">February 21, 2020</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2019-08-02-testing-rails-book-review/">Rails testing tips for newcomers</a>
+                <div class="entry-date">
+                    <time datetime="2019-08-02T00:00:00+02:00">August 2, 2019</time>
+                </div>
+            </div></div><h2 id="vue.js" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;vue.js&nbsp;(1)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2016-09-30-starter-project-rails-vue-example/">Starter project: Rails Vue example</a>
+                <div class="entry-date">
+                    <time datetime="2016-09-30T00:00:00+02:00">September 30, 2016</time>
+                </div>
+            </div></div><h2 id="web" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;web&nbsp;(7)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2018-09-02-active-admin-plugins/">Active Admin plugins</a>
+                <div class="entry-date">
+                    <time datetime="2018-09-02T00:00:00+02:00">September 2, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2018-04-25-grape-projects/">Grape projects</a>
+                <div class="entry-date">
+                    <time datetime="2018-04-25T00:00:00+02:00">April 25, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2018-04-02-ruby-http-mock-server/">Ruby http-mock-server</a>
+                <div class="entry-date">
+                    <time datetime="2018-04-02T00:00:00+02:00">April 2, 2018</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-11-11-rails-components/">Rails components</a>
+                <div class="entry-date">
+                    <time datetime="2017-11-11T00:00:00+01:00">November 11, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2017-07-01-rails-admin-plugins/">RailsAdmin plugins</a>
+                <div class="entry-date">
+                    <time datetime="2017-07-01T00:00:00+02:00">July 1, 2017</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-11-12-sinatra-rest-api/">sinatra-rest-api: Sinatra API generator</a>
+                <div class="entry-date">
+                    <time datetime="2016-11-12T00:00:00+01:00">November 12, 2016</time>
+                </div>
+            </div><div class="tag-entry">
+                <a href="/2016-05-01-pico-plugins/">New projects: pico plugins</a>
+                <div class="entry-date">
+                    <time datetime="2016-05-01T00:00:00+02:00">May 1, 2016</time>
+                </div>
+            </div></div><h2 id="website" class="linked-section">
+        <i class="fas fa-tag" aria-hidden="true"></i>
+        &nbsp;website&nbsp;(1)
+    </h2>
+    <div class="post-list"><div class="tag-entry">
+                <a href="/2016-04-25-grav-cms-site/">New site</a>
+                <div class="entry-date">
+                    <time datetime="2016-04-25T00:00:00+02:00">April 25, 2016</time>
+                </div>
+            </div></div></div>
+
+
+      
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="mailto:mat@blocknot.es" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/blocknotes" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/too_sleepy" title="Twitter">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Twitter</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://stackoverflow.com/users/2627246/mat" title="StackOverflow">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">StackOverflow</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Mattia Roccoberton
+        &nbsp;&bull;&nbsp;
+      
+      2021
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://www.blocknot.es/">blocknot.es</a>
+        </span>
+      
+
+      
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- AdSense -->
+<div id="adsense">
+  <div class="btn-close">X</div>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- blocknot.es -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2139312010639681"
+       data-ad-slot="6706524257"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/main.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

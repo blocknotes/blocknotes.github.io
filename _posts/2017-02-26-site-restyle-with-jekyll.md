@@ -1,6 +1,8 @@
 ---
 title: 'Site restyle with Jekyll'
-image: /img/img-jekyll.png
+image: /assets/img/img-jekyll.png
+tags: news ruby
+excerpt: A new Jekyll website
 ---
 
 It's time to change website structure: [Jekyll](https://jekyllrb.com)!

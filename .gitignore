@@ -1,7 +1,7 @@
 # project
-__misc
-_site
-.jekyll-metadata
+#_site
+_site_tmp/
+.jekyll-cache
 .sass-cache
 .vagrant
 
@@ -9,3 +9,6 @@ _site
 .DS_Store
 Thumbs.db
 ehthumbs.db
+
+# misc
+/test_results/

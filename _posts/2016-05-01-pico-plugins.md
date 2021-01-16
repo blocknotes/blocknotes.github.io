@@ -1,8 +1,8 @@
 ---
 title: 'New projects: pico plugins'
-image: /img/img-pico-plugins.png
-categories: project
-tags: web php
+image: /assets/img/img-news.png
+tags: project web php
+excerpt: Some components for Pico CMS
 ---
 
 Good News, Everyone!

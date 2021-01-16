@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>blocknot.es</title>
+    
+    
+    <description>A Developer's Journey</description>
+    
+    <link>https://www.blocknot.es/</link>
+    <atom:link href="https://www.blocknot.es/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Vagrant Rails 6 dev environment setup</title>
+        <description>
+          
+          Good news, everyone! Recently I made some experiments to setup a Rails 6 dev environment using Vagrant. I started from rails/rails-dev-box and applied some changes. VM Setup These are the features of the Vagrant file that I’m using: Ubuntu 18.04 LTS box; ability to install different ruby versions; project files...
+        </description>
+        <pubDate>Tue, 05 Jan 2021 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2021-01-05-vagrant-rails-6-dev-environment/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2021-01-05-vagrant-rails-6-dev-environment/</guid>
+      </item>
+    
+      <item>
+        <title>Administrate Materialize Theme</title>
+        <description>
+          
+          In the last days I prepared a theme for Administrate (a tool to create admin dashboards) using Materialize framework. The main features of my component are: uses only CSS (and very few JS), no structural changes are required; it’s responsive and tested on mobile browsers; allows to use Materialize styles/grid/widgets...
+        </description>
+        <pubDate>Tue, 01 Sep 2020 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2020-09-01-administrate-materialize-theme/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2020-09-01-administrate-materialize-theme/</guid>
+      </item>
+    
+      <item>
+        <title>A Telegram bot server in Ruby</title>
+        <description>
+          
+          Recently I made some experiments with Telegram bots in Ruby. From Telegram Bots API, there are 2 methods to receive incoming updates: getUpdates: using long polling; setWebhook: setting an URL that will receive the requests. Creating a bot with the first method is easily done using a Telegram client library...
+        </description>
+        <pubDate>Sat, 02 May 2020 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2020-05-02-telegram-bot-server-in-ruby/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2020-05-02-telegram-bot-server-in-ruby/</guid>
+      </item>
+    
+      <item>
+        <title>Reverse Coverage: Find which tests execute which lines of code</title>
+        <description>
+          
+          Have you ever wondered what tests cover a specific part of a project? Occasionally it could be useful to discover how is tested/executed/documented (in the way of tests as Living Documentation) a line (or set of lines) of an application. For example, when you create a part that stands over...
+        </description>
+        <pubDate>Fri, 21 Feb 2020 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2020-02-21-reverse-coverage/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2020-02-21-reverse-coverage/</guid>
+      </item>
+    
+      <item>
+        <title>First steps with Opal 1.0</title>
+        <description>
+          
+          Recently I have spent some time doing experiments with Opal rb 1.0, to use Ruby in place of Javascript. Here are some tests that could be useful. Require other sources There are 3 methods to include other sources: require, require_relative and require_tree. Also autoload can be used to include. Let’s...
+        </description>
+        <pubDate>Sun, 10 Nov 2019 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2019-11-10-first-steps-with-opal/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2019-11-10-first-steps-with-opal/</guid>
+      </item>
+    
+      <item>
+        <title>Rails testing tips for newcomers</title>
+        <description>
+          
+          Writing effective tests is tricky. When working with Ruby on Rails, a good starting book about this matter is “Testing Rails”, published by Thoughtbot. In this article, I will offer some interesting points that I found in it. Main concepts highlighted by the book What are the characteristics of an...
+        </description>
+        <pubDate>Fri, 02 Aug 2019 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2019-08-02-testing-rails-book-review/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2019-08-02-testing-rails-book-review/</guid>
+      </item>
+    
+      <item>
+        <title>A Rails middleware to change log level at runtime</title>
+        <description>
+          
+          Have you ever found the Rails logs too verbose in development? When working on a Rails application, you don’t always need that amount of detail in your logs. From time to time, a less verbose log is more than enough, especially after a long day coding. To change the log...
+        </description>
+        <pubDate>Wed, 12 Jun 2019 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2019-06-12-rails-middleware-to-change-log-level/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2019-06-12-rails-middleware-to-change-log-level/</guid>
+      </item>
+    
+      <item>
+        <title>Active Admin plugins</title>
+        <description>
+          
+          Good News, Everyone! In the last months I published some plugins for Active Admin, the administration framework for Ruby on Rails applications. Activeadmin Simple Form To use Simple Form in place of Formtastic in edit views (BETA): https://github.com/blocknotes/activeadmin_simple_form Activeadmin Active Resource To use a REST API in place of a...
+        </description>
+        <pubDate>Sun, 02 Sep 2018 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2018-09-02-active-admin-plugins/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2018-09-02-active-admin-plugins/</guid>
+      </item>
+    
+      <item>
+        <title>Grape projects</title>
+        <description>
+          
+          Good News, Everyone! I have just published some new projects using Grape, an opinionated framework for creating REST-like APIs in Ruby. Grape Starter Kit A boiler-plate / template for new grap projects using a structure similar to Rails: https://github.com/blocknotes/grape-starter-kit Grape by Examples Some common web tasks using Grape: cache, auth,...
+        </description>
+        <pubDate>Wed, 25 Apr 2018 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2018-04-25-grape-projects/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2018-04-25-grape-projects/</guid>
+      </item>
+    
+      <item>
+        <title>Ruby http-mock-server</title>
+        <description>
+          
+          Good News, Everyone! Some days ago I needed to use a mock server to test a feature I was working on. There are a lot of similar projects online but none of them allowed me to inspect the request easily. So I decided to create mine, a tool where it’s...
+        </description>
+        <pubDate>Mon, 02 Apr 2018 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2018-04-02-ruby-http-mock-server/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2018-04-02-ruby-http-mock-server/</guid>
+      </item>
+    
+      <item>
+        <title>Rails components</title>
+        <description>
+          
+          Good News, Everyone! In the last months I published some Rails components. Carrierwave Tests Some tests using Carrierwave and MiniMagick / RMagick / Vips: https://github.com/blocknotes/carrierwave-tests Contents Core A structure to manage contents in a flexible way: blocks with recursive nested blocks + items as “leaves”: https://github.com/blocknotes/contents_core Json Virtual Fields Some...
+        </description>
+        <pubDate>Sat, 11 Nov 2017 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2017-11-11-rails-components/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2017-11-11-rails-components/</guid>
+      </item>
+    
+      <item>
+        <title>Some new Ruby projects</title>
+        <description>
+          
+          Good News, Everyone! Here are some new Ruby projects that I prepared recently. Auto Seeding A component to auto generate seed data with ActiveRecord using a set of predefined or custom rules respecting models validations: https://github.com/blocknotes/auto-seeding Prawn Styled Text A Prawn PDF component which adds basic HTML support: https://github.com/blocknotes/prawn-styled-text Ruby...
+        </description>
+        <pubDate>Sat, 02 Sep 2017 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2017-09-02-some-new-ruby-projects/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2017-09-02-some-new-ruby-projects/</guid>
+      </item>
+    
+      <item>
+        <title>RailsAdmin plugins</title>
+        <description>
+          
+          Good News, Everyone! In the last months I published some plugins for RailsAdmin, a Rails engine that provides an easy-to-use interface for managing your data. RailsAdmin Extended Fields To add more options to fields (css classes from models, nested sortable tabs, nested components): https://github.com/blocknotes/rails_admin_extended_fields RailsAdmin Live Edit To edit site...
+        </description>
+        <pubDate>Sat, 01 Jul 2017 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2017-07-01-rails-admin-plugins/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2017-07-01-rails-admin-plugins/</guid>
+      </item>
+    
+      <item>
+        <title>Crystal projects</title>
+        <description>
+          
+          Good News, Everyone! I have just published some new projects using Crystal lang. Manual Generator A tool to generate PDF manuals from HTML documentation sites: https://github.com/blocknotes/manual-generator Kemal Rest API A library to create REST API with Kemal: https://github.com/blocknotes/kemal-rest-api curl-crystal Porting for libcurl, the multiprotocol file transfer library: https://github.com/blocknotes/curl-crystal gumbo-crystal Porting...
+        </description>
+        <pubDate>Tue, 18 Apr 2017 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2017-04-18-crystal-projects/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2017-04-18-crystal-projects/</guid>
+      </item>
+    
+      <item>
+        <title>Site restyle with Jekyll</title>
+        <description>
+          
+          It’s time to change website structure: Jekyll!
+
+I was curious about static sites generators and Jekyll seems a quite nice piece of software :)
+
+With beautiful-jekyll theme.
+
+        </description>
+        <pubDate>Sun, 26 Feb 2017 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2017-02-26-site-restyle-with-jekyll/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2017-02-26-site-restyle-with-jekyll/</guid>
+      </item>
+    
+      <item>
+        <title>Kemal REST API library</title>
+        <description>
+          
+          Good News, Everyone!
+
+I created more Crystal shards:
+https://github.com/blocknotes/kemal-rest-api
+
+A Kemal REST API library.
+
+        </description>
+        <pubDate>Sun, 15 Jan 2017 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2017-01-15-kemal-rest-api/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2017-01-15-kemal-rest-api/</guid>
+      </item>
+    
+      <item>
+        <title>magickwand for Crystal</title>
+        <description>
+          
+          Good News, Everyone!
+
+I created my second shard for Crystal:
+https://github.com/blocknotes/magickwand-crystal
+
+Crystal C bindings for MagickWand library, an interface to use the ImageMagick image processing libraries - see www.imagemagick.org
+
+        </description>
+        <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2017-01-01-magickwand-crystal/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2017-01-01-magickwand-crystal/</guid>
+      </item>
+    
+      <item>
+        <title>wkhtmltopdf for Crystal</title>
+        <description>
+          
+          Good News, Everyone!
+
+I created a component for Crystal lang:
+https://github.com/blocknotes/wkhtmltopdf-crystal
+
+A wrapper for C library libwkhtmltox.
+wkhtmltopdf and wkhtmltoimage permit to render HTML into PDF and various image formats using the Qt WebKit rendering engine - http://wkhtmltopdf.org/
+
+        </description>
+        <pubDate>Sat, 31 Dec 2016 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2016-12-31-wkhtmltopdf-crystal/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2016-12-31-wkhtmltopdf-crystal/</guid>
+      </item>
+    
+      <item>
+        <title>sinatra-rest-api: Sinatra API generator</title>
+        <description>
+          
+          Good News, Everyone!
+
+I have just published a new project:
+https://github.com/blocknotes/sinatra-rest-api
+
+A Sinatra component that generates CRUD routes for database ORM models.
+
+        </description>
+        <pubDate>Sat, 12 Nov 2016 00:00:00 +0100</pubDate>
+        <link>https://www.blocknot.es/2016-11-12-sinatra-rest-api/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2016-11-12-sinatra-rest-api/</guid>
+      </item>
+    
+      <item>
+        <title>pinfo-rails: information from a Rails project</title>
+        <description>
+          
+          Good News, Everyone!
+
+I created a small utility to fetch informations from a Ruby on Rails project:
+
+https://github.com/blocknotes/pinfo-rails
+
+It can help to view deployment configurations for example.
+
+Ruby gems page
+
+        </description>
+        <pubDate>Mon, 10 Oct 2016 00:00:00 +0200</pubDate>
+        <link>https://www.blocknot.es/2016-10-10-pinfo-rails-information-from-a-rails-project/</link>
+        <guid isPermaLink="true">https://www.blocknot.es/2016-10-10-pinfo-rails-information-from-a-rails-project/</guid>
+      </item>
+    
+  </channel>
+</rss>

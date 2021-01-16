@@ -1,114 +1,186 @@
-# --- General options --- #
-# Based on Beautiful Jekyll / Dean Attali
+baseurl: ''
+url: 'https://www.blocknot.es'
 
-# url is the full website URL
-# baseurl is the website's URL without the hostname
-
-# url: "https://blocknotes.github.io"
-url: "https://www.blocknot.es"
-baseurl: ""
-
-# If you are building a GitHub project page then use these settings:
-#url: "http://username.github.io/projectname"
-#baseurl: "/projectname"
-
-# Of course don't forget to change the username and projectname to YOUR username and project
+# --- Required options --- #
 
 # Name of website
 title: blocknot.es
 
-# Short description of your site
-description: A Developer's Journey
+# Your name to show in the footer
+author: Mattia Roccoberton
 
-# --- Navigation bar options --- #
+# --- List of links in the navigation bar --- #
 
-# List of links in the navigation bar
 navbar-links:
-  Projects:
-    - Web components: "web/components"
+  My projects:
+    - Github projects: "https://github.com/blocknotes?utf8=%E2%9C%93&tab=repositories&type=source"
+    - Ruby gems: "ruby/gems"
     - Android app: "android/app"
   About Me: "about-me"
 
-# Image to show in the navigation bar - image must be a square (width = height)
+# --- Logo --- #
+
+# Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+avatar: "/assets/img/logo_sm.png"
 
-# If you want to have an image logo in the top-left corner instead of the title text,
+# By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
+round-avatar: true
+
+# If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
-# title-img: /path/to/image
+#title-img: /path/to/image
 
-# --- Footer options --- #
 
-# Change all these values or delete the ones you don't want.
-# Important: you must keep the "name" parameter, everything else you can remove
-author:
-  name: Mattia Roccoberton
+# --- Footer social media links --- #
+
+# Select the social network links that you want to show in the footer.
+# Uncomment the links you want to show and add your information to each one.
+social-network-links:
   email: "mat@blocknot.es"
-  # facebook: yourname  # eg. daattali
-  github: blocknotes    # eg. daattali
-  twitter: too_sleepy   # eg. daattali
-  # reddit: yourname    # eg. daattali
-  # google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
-  # linkedin: yourname  # eg. daattali
-  # xing: yourname      # eg. daattali
-  stackoverflow: 2627246/mat  # eg. "3943160/daattali"
-  # snapchat: yourname  # eg. daattali
-  # instagram: yourname # eg. daattali
-  # youtube: yourlink   # eg. user/daattali or channel/daattali
-  # spotify: yourname   # eg. daattali
-  # telephone: yourphone   # eg. +14159998888
+  github: blocknotes
+  twitter: too_sleepy
+  stackoverflow: "2627246/mat"
+  # facebook: ...
+  # reddit: ...
+  # linkedin: ...
+  # xing: ...
+  # snapchat: ...
+  # instagram: ...
+  # youtube: ...
+  # spotify: ...
+  # telephone: ...
+  # steam: ...
+  # twitch: ...
+  # yelp: ...
+  # telegram: ...
+  # calendly: ...
+  # mastodon: ...
+  # ORCID: ...
+  # google-scholar: ...
 
-# Select which links to show in the footer
-footer-links-active:
-  rss: false
-  facebook: true
-  email: true
-  twitter: true
-  google-plus: false
-  github: true
-  reddit: false
-  linkedin: false
-  xing: false
-  stackoverflow: false
-  snapchat: false
-  instagram: false
-  youtube: false
-  spotify: false
-  telephone: false
+# If you want to show a link to an RSS in the footer, add the site description here.
+# If you don't want to show an RSS link, remove the following line.
+rss-description: A Developer's Journey
 
-# Select which share links to show in posts
+# --- General options --- #
+
+# Select which social network share links to show in posts
 share-links-active:
   twitter: true
   facebook: true
-  google: false
   linkedin: true
+  vk: false
 
-# How to display the link to the website in the footer
+# How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "blocknot.es"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "blocknot.es"
 
-# --- Misc --- #
-# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-#disqus: ""
+# Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
+excerpt_length: 50
 
-# Fill in your Google Analytics ID to track your website using GA
+# Whether or not to show an excerpt for every blog post in the feed page
+feed_show_excerpt: true
+
+# Whether or not to show a list of tags below each post preview in the feed page
+feed_show_tags: true
+
+# The keywords to associate with your website, for SEO purposes
+keywords: "ruby on rails,ruby language,development"
+
+# --- Colours / background image --- #
+
+# Personalize the colours in your website. Colour values can be any valid CSS colour
+
+navbar-col: "#E8E8E8"
+navbar-text-col: "#404040"
+navbar-border-col: "#DDDDDD"
+page-col: "#FFFFFF"
+text-col: "#404040"
+link-col: "#008AFF"
+hover-col: "#0085A1"
+footer-col: "#EAEAEA"
+footer-text-col: "#777777"
+footer-link-col: "#404040"
+
+# Alternatively, the navbar, footer, and page background can be set to an image
+# instead of colour
+
+#navbar-img: "/assets/img/bgimage.png"
+#footer-img: "/assets/img/bgimage.png"
+#page-img: "/assets/img/bgimage.png"
+
+# Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
+#mobile-theme-col: "#0085A1"
+
+# For any extra visual customization, you can include additional CSS files in every page on your site. List any custom CSS files here
+#site-css:
+#  - "/assets/css/custom-styles.css"
+
+# If you have common JavaScript files that should be included in every page, list them here
+#site-js:
+#  - "/assets/js/custom-script.js"
+
+# --- Web Analytics Section --- #
+
+# Fill in your Google Analytics gtag.js ID to track your website using gtag
+gtag: "UA-39592458-1"
+
+# Fill in your Google Analytics ID to track your website using Google Analytics
 #google_analytics: ""
 
 # Google Tag Manager ID
 #gtm: ""
 
+# Matomo (aka Piwik) Web statistics
+# Uncomment the following section to enable Matomo. The opt-out parameter controls
+# whether or not you want to allow users to opt out of tracking.
+#matomo:
+#  site_id: "9"
+#  uri: "demo.wiki.pro"
+#  opt-out: true
+
+# --- Comments --- #
+
+# To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
+disqus: "www-blocknot-es"
+
+# To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
+#fb_comment_id: ""
+
+# To use Utterances comments: (0) uncomment the following section, (1) fill in
+# "repository" (make sure the repository is public), (2) Enable Issues in your repository,
+# (3) Install the Utterances app in your repository https://github.com/apps/utterances
+# See more details about the parameters below at https://utteranc.es/
+#utterances:
+#  repository: # GitHub username/repository eg. "daattali/beautiful-jekyll"
+#  issue-term: title   # Mapping between blog posts and GitHub issues
+#  theme: github-light # Utterances theme
+#  label: blog-comments # Label that will be assigned to GitHub Issues created by Utterances
+
+# To use Staticman comments, first invite `staticmanlab` as a collaborator to your repository and
+# accept the invitation by going to `https://staticman3.herokuapp.com/v3/connect/github/<username>/<repo-name>`.
+# Then uncomment the following section and fill in "repository" and "branch".
+# If you want to use reCaptcha for staticman (optional for spam protection), then fill
+# in the "siteKey" and "secret" parameters below and also in `staticman.yml`.
+# See more details at https://staticman.net/
+#staticman:
+#  repository : # GitHub username/repository eg. "daattali/beautiful-jekyll"
+#  branch     : master # If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
+#  endpoint   : # (optional) URL of your own deployment, with a trailing slash eg. https://<your-api>/v3/entry/github/ (will fallback to a public GitLab instance)
+#  reCaptcha:
+#    siteKey  : # Use your own site key, you need to apply for one on Google
+#    secret   : # ENCRYPT your password by going to https://staticman3.herokuapp.com/v3/encrypt/<your-site-secret>
+
+# --- Misc --- #
+
+# Ruby Date Format to show dates of posts
+date_format: "%B %-d, %Y"
+
 # Facebook App ID
-# fb_app_id: ""
+#fb_app_id: ""
 
-# Excerpt Word Length
-# Truncates the excerpt to the specified number of words on the index page
-excerpt_length: 50
-
-# Character used to separate site title and description in HTML document title
-# and RSS feed title
-title-separator: "-"
-
-# --- Don't need to touch anything below here (but you can if you want) --- #
+# --- You don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
 timezone: "Europe/Rome"
@@ -119,9 +191,6 @@ paginate: 5
 
 kramdown:
   input: GFM
-
-# liquid:
-#   error_mode: strict
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
@@ -135,80 +204,22 @@ defaults:
       social-share: true # add social media sharing buttons to all blog posts
   -
     scope:
-      path: "" # all files
+      path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
-      show-avatar: true
-
-# Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
-link-tags: false
 
 # Exclude these files from production site
 exclude:
+  - CHANGELOG.md
+  - CNAME
+  - Dockerfile
   - Gemfile
   - Gemfile.lock
   - LICENSE
+  - Procfile
   - README.md
-  - CNAME
-  - Vagrantfile
+  - spec
 
-# prose.io config
-prose:
-  rooturl: '_posts'
-  media: 'img'
-  ignore:
-    - 404.html
-    - LICENSE
-    - feed.xml
-    - _config.yml
-    - /_layouts
-    - /_includes
-    - /css
-    - /img
-    - /js
-  metadata:
-    _posts:
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "post"
-      - name: "title"
-        field:
-          element: "text"
-          label: "Post title"
-          placeholder: "Title"
-          alterable: true
-      - name: "subtitle"
-        field:
-          element: "textarea"
-          label: "Subtitle"
-          placeholder: "A description of your post."
-          alterable: true
-      - name: "date"
-        field:
-          element: "text"
-          label: "Date"
-          help: "Enter date of post."
-          placeholder: "yyyy-mm-dd"
-          alterable: true
-      - name: "image"
-        field:
-          element: "text"
-          label: "Image"
-          help: "Add a thumbnail image to your post."
-          placeholder: "Thumbnail"
-          alterable: true
-      - name: "published"
-        field:
-          element: "checkbox"
-          label: "Publish"
-          help: "Check to publish post, uncheck to hide."
-
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
-
-# --- #
-
-google_analytics: UA-39592458-1
-disqus: www-blocknot-es

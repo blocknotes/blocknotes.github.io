@@ -14,4 +14,4 @@ Features:
 + keep screen on (option);
 + reload images automatically.
 
-<a href="http://play.google.com/store/apps/details?id=es.blocknot.slideshowrotator" target="_blank">http://play.google.com/store/apps/details?id=es.blocknot.slideshowrotator</a>
+<!-- <a href="http://play.google.com/store/apps/details?id=es.blocknot.slideshowrotator" target="_blank">http://play.google.com/store/apps/details?id=es.blocknot.slideshowrotator</a> -->

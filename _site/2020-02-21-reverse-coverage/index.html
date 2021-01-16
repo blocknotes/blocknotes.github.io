@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Reverse Coverage: Find which tests execute which lines of code</title>
+
+  
+  <meta name="author" content="Mattia Roccoberton">
+  
+
+  <meta name="description" content="Have you ever wondered what tests cover a specific part of a project? Occasionally it could be useful to discover how is tested/executed/documented (in the way of tests as Living Documentation) a line (or set of lines) of an application. For example, when you create a part that stands over...">
+
+  
+
+  
+  <meta name="keywords" content="ruby on rails,ruby language,development">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="blocknot.es" href="https://www.blocknot.es/feed.xml">
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39592458-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-39592458-1');
+</script>
+
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+      <link rel="stylesheet" href="/assets/css/main.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="blocknot.es">
+  <meta property="og:title" content="Reverse Coverage: Find which tests execute which lines of code">
+  <meta property="og:description" content="Have you ever wondered what tests cover a specific part of a project? Occasionally it could be useful to discover how is tested/executed/documented (in the way of tests as Living Documentation) a line (or set of lines) of an application. For example, when you create a part that stands over...">
+
+  
+  <meta property="og:image" content="https://www.blocknot.es/assets/img/logo_sm.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Mattia Roccoberton">
+  <meta property="og:article:published_time" content="2020-02-21T00:00:00+01:00">
+  <meta property="og:url" content="https://www.blocknot.es/2020-02-21-reverse-coverage/">
+  <link rel="canonical" href="https://www.blocknot.es/2020-02-21-reverse-coverage/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@too_sleepy">
+  <meta name="twitter:creator" content="@too_sleepy">
+
+  <meta property="twitter:title" content="Reverse Coverage: Find which tests execute which lines of code">
+  <meta property="twitter:description" content="Have you ever wondered what tests cover a specific part of a project? Occasionally it could be useful to discover how is tested/executed/documented (in the way of tests as Living Documentation) a line (or set of lines) of an application. For example, when you create a part that stands over...">
+
+  
+  <meta name="twitter:image" content="https://www.blocknot.es/assets/img/logo_sm.png">
+  
+
+  
+
+
+  
+
+  
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="https://www.blocknot.es/">blocknot.es</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My projects</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="https://github.com/blocknotes?utf8=%E2%9C%93&tab=repositories&type=source">Github projects</a>
+                  <a class="dropdown-item" href="/ruby/gems">Ruby gems</a>
+                  <a class="dropdown-item" href="/android/app">Android app</a>
+            </div>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/about-me">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="https://www.blocknot.es/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/logo_sm.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Reverse Coverage: Find which tests execute which lines of code</h1>
+          
+
+          
+            <span class="post-meta">Posted on February 21, 2020</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p>Have you ever wondered what tests <em>cover</em> a specific part of a project?</p>
+
+<p>Occasionally it could be useful to discover how is tested/executed/documented 
+(in the way of tests as <em>Living Documentation</em>) a line (or set of lines) of an 
+application.</p>
+
+<p>For example, when you create a part that stands over a product (like a Rails 
+Engine), you override methods, alter classes at runtime, add new behaviors that 
+could bring regressions to the underlying system. So <strong>it can help to check 
+what/how specs treat the original lines of code</strong>.</p>
+
+<p>Our component, <strong>Reverse Coverage</strong>, has this goal in mind.</p>
+
+<p>Another case of usage is when you work on a project with a lot of slow specs, if
+you need to check how your changes will affect the whole system without running 
+the entire test suite you can use our tool to find only the affected specs.</p>
+
+<p>Or when you need to write a test for a part that is similar to another one, 
+looking for other examples could be a reference for the new ones or even 
+improve the old ones if they are not meaningful.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>Internally Reverse Coverage uses the Ruby standard library <a href="https://ruby-doc.org/stdlib-2.5.5/libdoc/coverage/rdoc/Coverage.html">Coverage</a>
+component that provides coverage measurements for the sources file loaded in a 
+project.</p>
+
+<p>After each executed spec example, we evaluate the difference between the old 
+coverage “state” with the current one and we insert the data in a structure 
+named <em>coverage_matrix</em>; this hash stores the examples’ information connected to
+the source lines covered.</p>
+
+<p>At the end of the specs, <strong>we produce a YML file with the results</strong>, the default
+output path is <em>tmp/reverse_coverage.yml</em> and/or an <strong>simple HTML GUI</strong> to 
+browse the results, a good part of this formatter is took from 
+<a href="https://github.com/colszowka/simplecov-html">simplecov-html</a>.</p>
+
+<p>Here it is a screenshot of the generated HTML interface:
+<img src="/assets/img/screenshot-reverse-coverage.jpg" alt="Reverse Coverage screenshot" /></p>
+
+<h2 id="output-format">Output format</h2>
+
+<p>The keys of the output hash are the source files and values are hashes with the 
+relative examples. Each one of the hashes has line numbers as keys and the 
+examples data as values.</p>
+
+<p>An example of the YML output produced is the following:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s2">"</span><span class="s">/projects/project_sample1/app/controllers/posts_controller.rb"</span><span class="pi">:</span>
+  <span class="na">6</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">:description: should have received all(*(any args)) 1 time</span>
+    <span class="s">:full_description: PostsController#index should have received all(*(any args))</span>
+      <span class="s">1 time</span>
+    <span class="s">:file_path: "./spec/controllers/posts_controller_spec.rb"</span>
+    <span class="s">:line_number: </span><span class="m">14</span>
+    <span class="s">:scoped_id: '1:1:1'</span>
+    <span class="s">:type: :controller</span>
+    <span class="s">:example_ref: </span><span class="m">3155364627336002659</span>
+  <span class="pi">-</span> <span class="s">:description: should render template index</span>
+    <span class="s">:full_description: PostsController#index should render template index</span>
+    <span class="s">:file_path: "./spec/controllers/posts_controller_spec.rb"</span>
+    <span class="s">:line_number: </span><span class="m">15</span>
+    <span class="s">:scoped_id: '1:1:2'</span>
+    <span class="s">:type: :controller</span>
+    <span class="s">:example_ref: -1205417070080268895</span>
+  <span class="na">30</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="nl">&amp;1</span>
+    <span class="s">:description: 'should have received new(&lt;ActionController::Parameters {"author_id"=&gt;"",</span>
+      <span class="s">"category"=&gt;"", "created_at"=&gt;"", "description"=&gt;"", ..."", "state"=&gt;"available",</span>
+      <span class="s">"subtitle"=&gt;"", "title"=&gt;"Just a post", "updated_at"=&gt;""} permitted</span><span class="pi">:</span> <span class="no">true</span><span class="s">&gt;)</span>
+      <span class="s">1 time'</span>
+    <span class="s">:full_description: 'PostsController#create should have received new(&lt;ActionController::Parameters</span>
+      <span class="s">{"author_id"=&gt;"", "category"=&gt;"", "created_at"=&gt;"", "description"=&gt;"", ..."",</span>
+      <span class="s">"state"=&gt;"available", "subtitle"=&gt;"", "title"=&gt;"Just a post", "updated_at"=&gt;""}</span>
+      <span class="s">permitted</span><span class="pi">:</span> <span class="no">true</span><span class="s">&gt;) 1 time'</span>
+    <span class="s">:file_path: "./spec/controllers/posts_controller_spec.rb"</span>
+    <span class="s">:line_number: </span><span class="m">55</span>
+    <span class="s">:scoped_id: '1:4:1'</span>
+    <span class="s">:type: :controller</span>
+    <span class="s">:example_ref: -2140352806102114351</span>
+<span class="s2">"</span><span class="s">/projects/project_sample1/app/models/author.rb"</span><span class="pi">:</span>
+  <span class="na">25</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="nv">*1</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>We think that the idea can be useful to others and decided to release it as 
+open-source. <strong>It works with Ruby and Rails projects using RSpec test suite</strong>.</p>
+
+<ul>
+  <li>Gem page: <a href="https://rubygems.org/gems/reverse_coverage/">reverse_coverage</a></li>
+  <li>Project page: <a href="https://github.com/nebulab/reverse_coverage">Reverse Coverage</a></li>
+  <li>Authors: <a href="https://github.com/DanielePalombo">Daniele Palombo</a> and <a href="https://github.com/blocknotes">Mattia Roccoberton</a></li>
+</ul>
+
+<p>Please leave a comment if you would like to suggest changes or improvements to 
+this project.</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#project">project</a>
+          
+            <a href="/tags#rspec">rspec</a>
+          
+            <a href="/tags#ruby">ruby</a>
+          
+            <a href="/tags#testing">testing</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Reverse+Coverage%3A+Find+which+tests+execute+which+lines+of+code&url=https%3A%2F%2Fwww.blocknot.es%2F2020-02-21-reverse-coverage%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.blocknot.es%2F2020-02-21-reverse-coverage%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.blocknot.es%2F2020-02-21-reverse-coverage%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2019-11-10-first-steps-with-opal/" data-toggle="tooltip" data-placement="top" title="First steps with Opal 1.0">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2020-05-02-telegram-bot-server-in-ruby/" data-toggle="tooltip" data-placement="top" title="A Telegram bot server in Ruby">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+      
+  <div class="disqus-comments">
+  <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    var disqus_shortname = 'www-blocknot-es';
+    /* ensure that pages with query string get the same discussion */
+    var url_parts = window.location.href.split("?");
+    var disqus_url = url_parts[0];
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
+  
+  
+
+  
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="mailto:mat@blocknot.es" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/blocknotes" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/too_sleepy" title="Twitter">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Twitter</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://stackoverflow.com/users/2627246/mat" title="StackOverflow">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">StackOverflow</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Mattia Roccoberton
+        &nbsp;&bull;&nbsp;
+      
+      2021
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://www.blocknot.es/">blocknot.es</a>
+        </span>
+      
+
+      
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- AdSense -->
+<div id="adsense">
+  <div class="btn-close">X</div>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- blocknot.es -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2139312010639681"
+       data-ad-slot="6706524257"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/main.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

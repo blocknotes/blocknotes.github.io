@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Rails testing tips for newcomers</title>
+
+  
+  <meta name="author" content="Mattia Roccoberton">
+  
+
+  <meta name="description" content="Writing effective tests is tricky. When working with Ruby on Rails, a good starting book about this matter is “Testing Rails”, published by Thoughtbot. In this article, I will offer some interesting points that I found in it. Main concepts highlighted by the book What are the characteristics of an...">
+
+  
+
+  
+  <meta name="keywords" content="ruby on rails,ruby language,development">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="blocknot.es" href="https://www.blocknot.es/feed.xml">
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39592458-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-39592458-1');
+</script>
+
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+      <link rel="stylesheet" href="/assets/css/main.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="blocknot.es">
+  <meta property="og:title" content="Rails testing tips for newcomers">
+  <meta property="og:description" content="Writing effective tests is tricky. When working with Ruby on Rails, a good starting book about this matter is “Testing Rails”, published by Thoughtbot. In this article, I will offer some interesting points that I found in it. Main concepts highlighted by the book What are the characteristics of an...">
+
+  
+  <meta property="og:image" content="https://www.blocknot.es/assets/img/logo_sm.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Mattia Roccoberton">
+  <meta property="og:article:published_time" content="2019-08-02T00:00:00+02:00">
+  <meta property="og:url" content="https://www.blocknot.es/2019-08-02-testing-rails-book-review/">
+  <link rel="canonical" href="https://www.blocknot.es/2019-08-02-testing-rails-book-review/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@too_sleepy">
+  <meta name="twitter:creator" content="@too_sleepy">
+
+  <meta property="twitter:title" content="Rails testing tips for newcomers">
+  <meta property="twitter:description" content="Writing effective tests is tricky. When working with Ruby on Rails, a good starting book about this matter is “Testing Rails”, published by Thoughtbot. In this article, I will offer some interesting points that I found in it. Main concepts highlighted by the book What are the characteristics of an...">
+
+  
+  <meta name="twitter:image" content="https://www.blocknot.es/assets/img/logo_sm.png">
+  
+
+  
+
+
+  
+
+  
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="https://www.blocknot.es/">blocknot.es</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My projects</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="https://github.com/blocknotes?utf8=%E2%9C%93&tab=repositories&type=source">Github projects</a>
+                  <a class="dropdown-item" href="/ruby/gems">Ruby gems</a>
+                  <a class="dropdown-item" href="/android/app">Android app</a>
+            </div>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/about-me">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="https://www.blocknot.es/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/logo_sm.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Rails testing tips for newcomers</h1>
+          
+
+          
+            <span class="post-meta">Posted on August 2, 2019</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p><em>Writing effective tests is tricky.</em> When working with Ruby on Rails, a good starting 
+book about this matter is 
+<a href="https://github.com/thoughtbot/testing-rails">“Testing Rails”</a>, published by 
+<a href="https://thoughtbot.com/">Thoughtbot</a>. In this article, I will offer some 
+interesting points that I found in it.</p>
+
+<h2 id="main-concepts-highlighted-by-the-book">Main concepts highlighted by the book</h2>
+
+<p>What are the characteristics of an effective test suite?</p>
+
+<ul>
+  <li><em>Fast</em>: the faster your tests are, the more often you can run them (ideally 
+after every change);</li>
+  <li><em>Complete</em>: tests cover all public code paths in your application;</li>
+  <li><em>Reliable</em>: tests do not wrongly fail or pass;</li>
+  <li><em>Isolated</em>: tests set themselves up (so that you can run tests 
+individually), and clean up after themselves (to avoid to leave data or 
+global state which can lead to failures in other tests);</li>
+  <li><em>Maintainable</em>: if it is difficult to add new tests, you will stop writing 
+them and your suite becomes ineffective;</li>
+  <li><em>Expressive</em>: tests should be easy enough to read so they can serve as 
+documentation (because they are always kept up to date). This is related to 
+the concept of <strong>Living documentation</strong>.</li>
+</ul>
+
+<h3 id="tdd-test-driven-development">TDD (Test Driven Development)</h3>
+
+<p>Test Driven Development is an approach to create applications where you write 
+tests first, you write just enough production code to fulfill that tests and 
+you refactor the code to improve it; repeating these 3 steps until you reach a 
+good level of completness of the software.</p>
+
+<p><em>TDD</em> is based on a process called Red, Green, Refactor:</p>
+
+<ul>
+  <li><em>Red</em>: write a test that covers the functionality you would like to see 
+implemented, run the test, you should see it fail;</li>
+  <li><em>Green</em>: read the error message from the failing test, and write as little 
+code as possible to fix the current error message;</li>
+  <li><em>Refactor</em>: clean up your code, reducing any duplication you may have 
+introduced; this includes your code as well as your tests.</li>
+</ul>
+
+<p>TDD Approaches:</p>
+
+<ul>
+  <li><em>Outside-In Development</em> starts from the highest level of abstraction first. 
+Often, this will be from the perspective of the user who accesses the 
+application using a browser and interacting with a set of pages. This kind of 
+tests are called <strong>acceptance tests</strong> and are focused on the behavior of the 
+program. During the development of the application more internal details are 
+written and more low-level tests can be prepared.</li>
+  <li>Sometimes you don’t know what will be your end solution, and it could be 
+better an <em>Inside-Out Development</em> approach which helps you build up your code 
+component by component. At each step, you create a larger piece of the 
+application until a complete state is reached.</li>
+</ul>
+
+<h2 id="tests-in-rails">Tests in Rails</h2>
+
+<p>Testing is a big topic, there are plenty of features to check and different 
+ways to do it. That’s why some good components are required to prepare valid 
+tests. In the following section, you can find the main ones.</p>
+
+<h3 id="rspec-rails"><a href="https://github.com/rspec/rspec-rails">rspec-rails</a></h3>
+
+<p><strong>In brief</strong>: provides the structure for writing executable examples of how 
+your code should behave.</p>
+
+<p><strong>Installation</strong>: add <code class="highlighter-rouge">gem 'rspec-rails'</code> to the Gemfile, in groups 
+<em>development</em> (because it adds Rails generators and rake tasks) and <em>test</em>.
+After executing <code class="highlighter-rouge">bundle</code>, launch: <code class="highlighter-rouge">rails generate rspec:install</code> which 
+generates <strong>spec/spec_helper.rb</strong> (used to customize how RSpec behaves), 
+<strong>spec/rails_helper.rb</strong> (used to customize how RSpec behaves in the Rails 
+application), <strong>.rspec</strong> (used to specify RSpec flags)</p>
+
+<p><strong>Notes</strong>: some good flags for <strong>.rspec</strong> (require spec_helper, enable colors, 
+expanded output format, list slowest examples):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--require spec_helper
+--color
+--format documentation
+--profile
+</code></pre></div></div>
+
+<h3 id="capybara"><a href="https://github.com/teamcapybara/capybara">capybara</a></h3>
+
+<p><strong>In brief</strong>: it helps you test web applications by simulating how a real user 
+would interact with your app. In other words, it is an acceptance test 
+framework for Ruby web applications.</p>
+
+<p><strong>Installation</strong>: add <code class="highlighter-rouge">gem 'capybara'</code> to the Gemfile (in <em>test</em> group). After 
+executing <code class="highlighter-rouge">bundle</code>, add <code class="highlighter-rouge">require 'capybara/rails'</code> to <strong>spec/rails_helper.rb</strong></p>
+
+<p><strong>Notes</strong>: main methods available: <code class="highlighter-rouge">fill_in</code>, <code class="highlighter-rouge">find</code>, <code class="highlighter-rouge">have_content</code>, 
+<code class="highlighter-rouge">has_css</code>, <code class="highlighter-rouge">have_link</code>, <code class="highlighter-rouge">within</code>, <code class="highlighter-rouge">visit</code>. An important note about <code class="highlighter-rouge">find</code> is 
+that it will keep trying until the element shows up on the page or a maximum 
+wait time has been exceeded (default 2 seconds)</p>
+
+<h3><a href="https://github.com/thoughtbot/factory_bot_rails" target="blank">factory_bot_rails</a></h3>
+
+<p><strong>In brief</strong>: library for setting up Ruby objects as test data.</p>
+
+<p><strong>Installation</strong>: add <code class="highlighter-rouge">gem 'factory_bot_rails'</code> to the Gemfile (in <em>test</em> group) 
+and execute <code class="highlighter-rouge">bundle</code></p>
+
+<p><strong>Notes</strong>: main methods available: <code class="highlighter-rouge">attributes_for</code>, <code class="highlighter-rouge">build</code>, <code class="highlighter-rouge">build_stubbed</code>, 
+<code class="highlighter-rouge">create</code></p>
+
+<h3 id="database_cleaner"><a href="https://github.com/DatabaseCleaner/database_cleaner">database_cleaner</a></h3>
+
+<p><strong>In brief</strong>: strategies for cleaning databases in Ruby. It helps to run 
+<em>isolated</em> examples.</p>
+
+<p><strong>Installation</strong>: add <code class="highlighter-rouge">gem 'database_cleaner'</code> to the Gemfile (in <em>test</em> group) 
+and execute <code class="highlighter-rouge">bundle</code></p>
+
+<p><strong>Configuration</strong>: add to <strong>spec/rails_helper.rb</strong> (basic example):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config.before(:suite) do
+  DatabaseCleaner.strategy = :transaction
+  DatabaseCleaner.clean_with(:truncation)
+end
+
+config.around do |example|
+  DatabaseCleaner.cleaning do
+    example.run
+  end
+end
+</code></pre></div></div>
+
+<p>Read the gem documentation to see other configuration options.</p>
+
+<h3 id="shoulda-matchers"><a href="https://github.com/thoughtbot/shoulda-matchers">shoulda-matchers</a></h3>
+
+<p><strong>In brief</strong>: simple one-liner tests for common Rails functionality that, if 
+written by hand, would be much longer, more complex, and error-prone.</p>
+
+<p><strong>Installation</strong>: add <code class="highlighter-rouge">gem 'shoulda-matchers'</code> and 
+<code class="highlighter-rouge">gem 'rails-controller-testing'</code> to the Gemfile (in test group) and execute 
+<code class="highlighter-rouge">bundle</code>. Add to <strong>spec/rails_helper.rb</strong>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+</code></pre></div></div>
+
+<p><strong>Example</strong>: to check a presence validation: 
+<code class="highlighter-rouge">it { should validate_presence_of(:name) }</code></p>
+
+<h3 id="other-gems">Other gems</h3>
+
+<p>More gems described in the book:</p>
+
+<ul>
+  <li><a href="https://github.com/email-spec/email-spec"><em>email-spec</em></a>: helpful matchers 
+for testing mailers, for example: <code class="highlighter-rouge">deliver_to</code>, <code class="highlighter-rouge">deliver_from</code>, 
+<code class="highlighter-rouge">have_subject</code>, <code class="highlighter-rouge">have_body_text</code></li>
+  <li><a href="https://github.com/vcr/vcr"><em>vcr</em></a>: allows to record HTTP requests and 
+replay them in future test runs</li>
+  <li><a href="https://github.com/bblimke/webmock"><em>webmock</em></a>: allows to intercept HTTP 
+requests and returns a canned response (can be configured to block all 
+external web requests raising an exception)</li>
+</ul>
+
+<p>Some other gem that could help a lot:</p>
+
+<ul>
+  <li><a href="https://github.com/mattheworiordan/capybara-screenshot"><em>capybara-screenshot</em></a>: 
+automatically save screen shots when a Capybara scenario fails</li>
+  <li><a href="https://github.com/stympy/faker"><em>faker</em></a>: a library for generating fake 
+data such as names, addresses, and phone numbers</li>
+  <li><a href="https://github.com/colszowka/simplecov"><em>simplecov</em></a>: code coverage with a 
+powerful configuration library and automatic merging of coverage across test 
+suites</li>
+  <li><a href="https://github.com/NoRedInk/rspec-retry"><em>rspec-retry</em></a>: retry randomly 
+failing rspec example</li>
+  <li><a href="https://github.com/rubocop-hq/rubocop-rspec"><em>rubocop-rspec</em></a>: code style 
+checking for RSpec files (<em>Rubocop</em> extension)</li>
+  <li><a href="https://github.com/titusfortner/webdrivers"><em>webdrivers</em></a>: keep your 
+Selenium WebDrivers updated automatically</li>
+</ul>
+
+<h2 id="random-tips-and-suggestions">Random tips and suggestions</h2>
+
+<ul>
+  <li>You should test <em>what</em> your code does, not <em>how</em> it is done. So it’s 
+important to favor testing behavior over implementation.</li>
+  <li>Private methods are an implementation detail and should not be tested.</li>
+  <li>Avoid testing code you don’t own, like third-party libraries (they should 
+already be tested by the respective authors).</li>
+  <li>Where possible, prefer <code class="highlighter-rouge">.build_stubbed</code> (instantiates an object, 
+instantiates the associated objects) (or <code class="highlighter-rouge">.build</code> - instantiates an object, 
+create the associated objects on DB) over <code class="highlighter-rouge">.create</code> (create an object and the 
+associated objects on DB), as persisting to the database is one of the 
+slowest operations in many tests.</li>
+  <li>Feature tests which use a JavaScript driver (enabled with <code class="highlighter-rouge">js: true</code>) are 
+very slow, if JS is not required you can disable it on some specific examples.</li>
+  <li><a href="https://api.rubyonrails.org/classes/ActiveSupport/Testing/TimeHelpers.html#method-i-travel_to">travel_to</a> 
+(Rails 4.1+) method allows you to stub the time within a block without extra 
+gems (like <a href="https://github.com/travisjeffery/timecop"><em>timecop</em></a>).</li>
+  <li>Ideally, in a pure unit test, we could isolate the SUT (<em>System Under Test</em>) 
+from its collaborators so that only the SUT would cause our spec to fail.</li>
+  <li><em>factories</em> should define the minimum number of attributes for the model to 
+pass validations, use <em>traits</em> to extend them.</li>
+  <li>When <em>mocking</em> an interaction with a collaborator we set up an expectation 
+that it will receive a given message and then exercise the system to see if 
+that does indeed happen.</li>
+  <li><em>Spying</em> allows us to check if an object (which must be stubbed) receives a 
+given message.</li>
+  <li><em>Stubbing</em> allows us to tell collaborators to return a canned response when 
+they receive a given message.</li>
+  <li>When you don’t need Rails, or any of its dependencies, require your 
+spec_helper instead of rails_helper for modest time savings.</li>
+  <li>Write happy path tests with feature specs, and sad paths with some other 
+medium, such as <em>request specs</em> or view specs.</li>
+  <li>Whenever you modify global state, be sure to reset it to the original state 
+after the test is run, <em>even if the test raises an error</em>.</li>
+  <li>It’s generally a best practice to encapsulate external interactions (ex. 
+API service) in an adapter class. Your tests can stub this adapter instead of 
+making the network request.</li>
+  <li>The <em>extract method</em> and <em>page object</em> patterns are commonly used to hide 
+implementation details and to maintain a single level of abstraction in both 
+source code and specs.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>There are plenty of ways to write tests, but preparing good ones sometimes can 
+be difficult. With the right experience and some useful tools, this goal can 
+be achieved and writing specs suddenly becomes fun because keeping the test 
+suite tidy can let you learn different perspectives on your code and over the 
+years the Rails community built a nice set of comfortable tools that helps a 
+lot.</p>
+
+<p>I would be really interested in knowing what gems you like. 
+Please leave a comment if you can suggest any other testing gem.</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#ruby">ruby</a>
+          
+            <a href="/tags#rails">rails</a>
+          
+            <a href="/tags#testing">testing</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Rails+testing+tips+for+newcomers&url=https%3A%2F%2Fwww.blocknot.es%2F2019-08-02-testing-rails-book-review%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.blocknot.es%2F2019-08-02-testing-rails-book-review%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.blocknot.es%2F2019-08-02-testing-rails-book-review%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2019-06-12-rails-middleware-to-change-log-level/" data-toggle="tooltip" data-placement="top" title="A Rails middleware to change log level at runtime">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2019-11-10-first-steps-with-opal/" data-toggle="tooltip" data-placement="top" title="First steps with Opal 1.0">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+      
+  <div class="disqus-comments">
+  <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    var disqus_shortname = 'www-blocknot-es';
+    /* ensure that pages with query string get the same discussion */
+    var url_parts = window.location.href.split("?");
+    var disqus_url = url_parts[0];
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
+  
+  
+
+  
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="mailto:mat@blocknot.es" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/blocknotes" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/too_sleepy" title="Twitter">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Twitter</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://stackoverflow.com/users/2627246/mat" title="StackOverflow">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">StackOverflow</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Mattia Roccoberton
+        &nbsp;&bull;&nbsp;
+      
+      2021
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://www.blocknot.es/">blocknot.es</a>
+        </span>
+      
+
+      
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- AdSense -->
+<div id="adsense">
+  <div class="btn-close">X</div>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- blocknot.es -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2139312010639681"
+       data-ad-slot="6706524257"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/main.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

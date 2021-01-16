@@ -1,6 +1,8 @@
 ---
 title: 'wkhtmltopdf for Crystal'
-image: /img/img-crystal.png
+image: /assets/img/img-crystal.png
+tags: project crystal
+excerpt: A library porting for wkhtmltopdf for Crystal
 ---
 
 Good News, Everyone!

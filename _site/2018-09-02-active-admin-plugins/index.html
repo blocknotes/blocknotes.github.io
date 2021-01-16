@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Beautiful Jekyll 5.0.0 | Copyright Dean Attali 2020 -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  <title>Active Admin plugins</title>
+
+  
+  <meta name="author" content="Mattia Roccoberton">
+  
+
+  <meta name="description" content="Good News, Everyone! In the last months I published some plugins for Active Admin, the administration framework for Ruby on Rails applications. Activeadmin Simple Form To use Simple Form in place of Formtastic in edit views (BETA): https://github.com/blocknotes/activeadmin_simple_form Activeadmin Active Resource To use a REST API in place of a...">
+
+  
+
+  
+  <meta name="keywords" content="ruby on rails,ruby language,development">
+  
+
+  <link rel="alternate" type="application/rss+xml" title="blocknot.es" href="https://www.blocknot.es/feed.xml">
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39592458-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-39592458-1');
+</script>
+
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+      <link rel="stylesheet" href="/assets/css/main.css">
+    
+  
+
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="blocknot.es">
+  <meta property="og:title" content="Active Admin plugins">
+  <meta property="og:description" content="Good News, Everyone! In the last months I published some plugins for Active Admin, the administration framework for Ruby on Rails applications. Activeadmin Simple Form To use Simple Form in place of Formtastic in edit views (BETA): https://github.com/blocknotes/activeadmin_simple_form Activeadmin Active Resource To use a REST API in place of a...">
+
+  
+  <meta property="og:image" content="https://www.blocknot.es/assets/img/logo_sm.png">
+  
+
+  
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="Mattia Roccoberton">
+  <meta property="og:article:published_time" content="2018-09-02T00:00:00+02:00">
+  <meta property="og:url" content="https://www.blocknot.es/2018-09-02-active-admin-plugins/">
+  <link rel="canonical" href="https://www.blocknot.es/2018-09-02-active-admin-plugins/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@too_sleepy">
+  <meta name="twitter:creator" content="@too_sleepy">
+
+  <meta property="twitter:title" content="Active Admin plugins">
+  <meta property="twitter:description" content="Good News, Everyone! In the last months I published some plugins for Active Admin, the administration framework for Ruby on Rails applications. Activeadmin Simple Form To use Simple Form in place of Formtastic in edit views (BETA): https://github.com/blocknotes/activeadmin_simple_form Activeadmin Active Resource To use a REST API in place of a...">
+
+  
+  <meta name="twitter:image" content="https://www.blocknot.es/assets/img/logo_sm.png">
+  
+
+  
+
+
+  
+
+  
+</head>
+
+
+<body>
+
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-regular"><a class="navbar-brand" href="https://www.blocknot.es/">blocknot.es</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My projects</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="https://github.com/blocknotes?utf8=%E2%9C%93&tab=repositories&type=source">Github projects</a>
+                  <a class="dropdown-item" href="/ruby/gems">Ruby gems</a>
+                  <a class="dropdown-item" href="/android/app">Android app</a>
+            </div>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/about-me">About Me</a>
+          </li></ul>
+  </div>
+
+  
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="https://www.blocknot.es/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/logo_sm.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+  <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>Active Admin plugins</h1>
+          
+
+          
+            <span class="post-meta">Posted on September 2, 2018</span>
+            
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <p>Good News, Everyone!</p>
+
+<p>In the last months I published some plugins for <a href="https://github.com/activeadmin/activeadmin">Active Admin</a>, <em>the administration framework for Ruby on Rails applications</em>.</p>
+
+<h3 id="activeadmin-simple-form">Activeadmin Simple Form</h3>
+
+<p>To use Simple Form in place of Formtastic in edit views (BETA):
+<a href="https://github.com/blocknotes/activeadmin_simple_form">https://github.com/blocknotes/activeadmin_simple_form</a></p>
+
+<h3 id="activeadmin-active-resource">Activeadmin Active Resource</h3>
+
+<p>To use a REST API in place of a local database as data source using <a href="https://github.com/rails/activeresource">Active Resource</a> (BETA):
+<a href="https://github.com/blocknotes/activeadmin_active_resource">https://github.com/blocknotes/activeadmin_active_resource</a></p>
+
+<h3 id="activeadmin-jfu-upload">Activeadmin JFU Upload</h3>
+
+<p>To use <a href="https://github.com/blueimp/jQuery-File-Upload">jQuery-File-Upload</a> for file uploads in forms (AJAX uploads, chunked file uploads for large files):
+<a href="https://github.com/blocknotes/activeadmin_jfu_upload">https://github.com/blocknotes/activeadmin_jfu_upload</a></p>
+
+<h3 id="activeadmin-trumbowyg">Activeadmin Trumbowyg</h3>
+
+<p>To use <a href="https://alex-d.github.io/Trumbowyg/">Trumbowyg Editor</a> for HTML content fields:
+<a href="https://github.com/blocknotes/activeadmin_trumbowyg">https://github.com/blocknotes/activeadmin_trumbowyg</a></p>
+
+<h3 id="activeadmin-quill-editor">Activeadmin Quill Editor</h3>
+
+<p>To use <a href="https://github.com/quilljs/quill">Quill Rich Text Editor</a> for HTML content fields:
+<a href="https://github.com/blocknotes/activeadmin_quill_editor">https://github.com/blocknotes/activeadmin_quill_editor</a></p>
+
+<h3 id="activeadmin-froala-editor">Activeadmin Froala Editor</h3>
+
+<p>To use <a href="https://github.com/froala/wysiwyg-editor">Froala Editor</a> for HTML content fields (jQuery required):
+<a href="https://github.com/blocknotes/activeadmin_froala_editor">https://github.com/blocknotes/activeadmin_froala_editor</a></p>
+
+<h3 id="activeadmin-select-many">Activeadmin Select Many</h3>
+
+<p>To improve one-to-many / many-to-many / many-to-one associations selection (2 new inputs: select_many and select_one) (jQuery required):
+<a href="https://github.com/blocknotes/activeadmin_select_many">https://github.com/blocknotes/activeadmin_select_many</a></p>
+
+<h3 id="activeadmin-dynamic-fields">Activeadmin Dynamic Fields</h3>
+
+<p>To add dynamic behaviors to fields (conditional checks / trigger actions / inline editing / content dialogs):
+<a href="https://github.com/blocknotes/activeadmin_dynamic_fields">https://github.com/blocknotes/activeadmin_dynamic_fields</a></p>
+
+<h3 id="activeadmin-medium-editor">Activeadmin Medium Editor</h3>
+
+<p>To use <a href="https://github.com/yabwe/medium-editor">Medium Editor</a> for HTML content fields:
+<a href="https://github.com/blocknotes/activeadmin_medium_editor">https://github.com/blocknotes/activeadmin_medium_editor</a></p>
+
+<h3 id="activeadmin-selectize">Activeadmin Selectize</h3>
+
+<p>To use <a href="http://selectize.github.io/selectize.js/">Selectize.js</a> (jQuery required) for select inputs:
+<a href="https://github.com/blocknotes/activeadmin_selectize">https://github.com/blocknotes/activeadmin_selectize</a></p>
+
+<h3 id="activeadmin-blaze-theme">Activeadmin Blaze Theme</h3>
+
+<p>A compact and clean theme using <a href="https://www.blazeui.com/">Blaze CSS</a>:
+<a href="https://github.com/blocknotes/activeadmin_blaze_theme">https://github.com/blocknotes/activeadmin_blaze_theme</a></p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          <span>Tags:</span>
+          
+            <a href="/tags#project">project</a>
+          
+            <a href="/tags#ruby">ruby</a>
+          
+            <a href="/tags#web">web</a>
+          
+        </div>
+      
+
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+    <a href="https://twitter.com/intent/tweet?text=Active+Admin+plugins&url=https%3A%2F%2Fwww.blocknot.es%2F2018-09-02-active-admin-plugins%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.blocknot.es%2F2018-09-02-active-admin-plugins%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.blocknot.es%2F2018-09-02-active-admin-plugins%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2018-04-25-grape-projects/" data-toggle="tooltip" data-placement="top" title="Grape projects">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="page-item next">
+          <a class="page-link" href="/2019-06-12-rails-middleware-to-change-log-level/" data-toggle="tooltip" data-placement="top" title="A Rails middleware to change log level at runtime">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+      
+  <div class="disqus-comments">
+  <div class="comments">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    var disqus_shortname = 'www-blocknot-es';
+    /* ensure that pages with query string get the same discussion */
+    var url_parts = window.location.href.split("?");
+    var disqus_url = url_parts[0];
+    (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</div>
+  
+  
+
+  
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="/feed.xml" title="RSS">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li><li class="list-inline-item">
+    <a href="mailto:mat@blocknot.es" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/blocknotes" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://twitter.com/too_sleepy" title="Twitter">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Twitter</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://stackoverflow.com/users/2627246/mat" title="StackOverflow">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">StackOverflow</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Mattia Roccoberton
+        &nbsp;&bull;&nbsp;
+      
+      2021
+
+      
+        &nbsp;&bull;&nbsp;
+        <span class="author-site">
+          <a href="https://www.blocknot.es/">blocknot.es</a>
+        </span>
+      
+
+      
+      </p>
+      <p class="theme-by text-muted">
+        Powered by
+        <a href="https://beautifuljekyll.com">Beautiful Jekyll</a>
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- AdSense -->
+<div id="adsense">
+  <div class="btn-close">X</div>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- blocknot.es -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-2139312010639681"
+       data-ad-slot="6706524257"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/main.js"></script>
+    
+  
+
+
+
+
+
+
+
+
+
+</body>
+</html>

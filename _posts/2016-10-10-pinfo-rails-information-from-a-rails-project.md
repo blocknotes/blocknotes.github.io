@@ -1,6 +1,8 @@
 ---
 title: 'pinfo-rails: information from a Rails project'
-image: /img/img-rails.jpg
+image: /assets/img/img-ruby-on-rails.png
+tags: project ruby rails
+excerpt: A small utility to fetch informations from a Ruby on Rails project
 ---
 
 Good News, Everyone!

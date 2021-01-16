@@ -1,6 +1,8 @@
 ---
 title: 'New project: PhantomJS sitemap generator'
-image: /img/img-phantomjs.jpg
+image: /assets/img/img-news.png
+tags: javascript
+excerpt: A nodeJS module to create sitemaps using PhantomJS
 ---
 
 Good News, Everyone!

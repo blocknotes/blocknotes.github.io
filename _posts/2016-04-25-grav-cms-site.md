@@ -1,7 +1,8 @@
 ---
 title: 'New site'
-tags: website
-categories: news
+image: /assets/img/img-news.png
+tags: news website
+excerpt: A new Grav website
 ---
 
 Here is my new website! It's Grav time.
