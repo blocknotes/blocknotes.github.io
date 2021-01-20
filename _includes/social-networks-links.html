@@ -2,11 +2,8 @@
 
 {%- if site.rss-description -%}
   <li class="list-inline-item">
-    <a href="{{ '/feed.xml' | relative_url }}" title="RSS">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="{{ '/feed.xml' | relative_url }}" class="svg-icon-md" title="RSS">
+      {% include svg/fontawesome/rss.svg %}
       <span class="sr-only">RSS</span>
     </a>
   </li>
@@ -14,11 +11,8 @@
 
 {%- if site.social-network-links.email -%}
   <li class="list-inline-item">
-    <a href="mailto:{{ site.social-network-links.email }}" title="Email me">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="mailto:{{ site.social-network-links.email }}" class="svg-icon-md" title="Email me">
+      {% include svg/fontawesome/envelope.svg %}
       <span class="sr-only">Email me</span>
    </a>
   </li>
@@ -26,11 +20,8 @@
 
 {%- if site.social-network-links.calendly -%}
   <li class="list-inline-item">
-    <a href="https://calendly.com/{{ site.social-network-links.calendly }}" title="Schedule a meeting with me">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-calendar-check fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://calendly.com/{{ site.social-network-links.calendly }}" class="svg-icon-md" title="Schedule a meeting with me">
+      {% include svg/fontawesome/calendar-check.svg %}
       <span class="sr-only">Schedule a meeting with me</span>
    </a>
   </li>
@@ -38,11 +29,8 @@
 
 {%- if site.social-network-links.facebook -%}
   <li class="list-inline-item">
-    <a href="https://www.facebook.com/{{ site.social-network-links.facebook }}" title="Facebook">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://www.facebook.com/{{ site.social-network-links.facebook }}" class="svg-icon-md" title="Facebook">
+      {% include svg/fontawesome/facebook.svg %}
       <span class="sr-only">Facebook</span>
    </a>
   </li>
@@ -50,11 +38,8 @@
 
 {%- if site.social-network-links.telegram -%}
   <li class="list-inline-item">
-    <a href="https://t.me/{{ site.social-network-links.telegram }}" title="Telegram">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-telegram-plane fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://t.me/{{ site.social-network-links.telegram }}" class="svg-icon-md" title="Telegram">
+      {% include svg/fontawesome/telegram-plane.svg %}
       <span class="sr-only">Telegram</span>
     </a>
   </li>
@@ -62,11 +47,8 @@
 
 {%- if site.social-network-links.github -%}
   <li class="list-inline-item">
-    <a href="https://github.com/{{ site.social-network-links.github }}" title="GitHub">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://github.com/{{ site.social-network-links.github }}" class="svg-icon-md" title="GitHub">
+      {% include svg/fontawesome/github.svg %}
       <span class="sr-only">GitHub</span>
    </a>
   </li>
@@ -74,11 +56,8 @@
 
 {%- if site.social-network-links.twitter -%}
   <li class="list-inline-item">
-    <a href="https://twitter.com/{{ site.social-network-links.twitter }}" title="Twitter">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://twitter.com/{{ site.social-network-links.twitter }}" class="svg-icon-md" title="Twitter">
+      {% include svg/fontawesome/twitter.svg %}
       <span class="sr-only">Twitter</span>
    </a>
   </li>
@@ -86,11 +65,8 @@
 
 {%- if site.social-network-links.reddit -%}
   <li class="list-inline-item">
-    <a href="https://reddit.com/u/{{ site.social-network-links.reddit }}" title="Reddit">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://reddit.com/u/{{ site.social-network-links.reddit }}" class="svg-icon-md" title="Reddit">
+      {% include svg/fontawesome/reddit.svg %}
       <span class="sr-only">Reddit</span>
    </a>
   </li>
@@ -98,11 +74,8 @@
 
 {%- if site.social-network-links.linkedin -%}
   <li class="list-inline-item">
-    <a href="https://linkedin.com/in/{{ site.social-network-links.linkedin }}" title="LinkedIn">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://linkedin.com/in/{{ site.social-network-links.linkedin }}" class="svg-icon-md" title="LinkedIn">
+      {% include svg/fontawesome/linkedin.svg %}
       <span class="sr-only">LinkedIn</span>
    </a>
   </li>
@@ -110,11 +83,8 @@
 
 {%- if site.social-network-links.xing -%}
   <li class="list-inline-item">
-    <a href="https://www.xing.com/profile/{{ site.social-network-links.xing }}" title="Xing">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-xing fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://www.xing.com/profile/{{ site.social-network-links.xing }}" class="svg-icon-md" title="Xing">
+      {% include svg/fontawesome/xing.svg %}
       <span class="sr-only">Xing</span>
    </a>
   </li>
@@ -122,11 +92,8 @@
 
 {%- if site.social-network-links.stackoverflow -%}
   <li class="list-inline-item">
-    <a href="https://stackoverflow.com/users/{{ site.social-network-links.stackoverflow }}" title="StackOverflow">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://stackoverflow.com/users/{{ site.social-network-links.stackoverflow }}"  class="svg-icon-md" title="StackOverflow">
+      {% include svg/fontawesome/stack-overflow.svg %}
       <span class="sr-only">StackOverflow</span>
    </a>
   </li>
@@ -134,11 +101,8 @@
 
 {%- if site.social-network-links.snapchat -%}
   <li class="list-inline-item">
-    <a href="https://www.snapchat.com/add/{{ site.social-network-links.snapchat }}" title="Snapchat">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://www.snapchat.com/add/{{ site.social-network-links.snapchat }}"  class="svg-icon-md" title="Snapchat">
+      {% include svg/fontawesome/snapchat-ghost.svg %}
       <span class="sr-only">Snapchat</span>
    </a>
   </li>
@@ -146,11 +110,8 @@
 
 {%- if site.social-network-links.instagram -%}
   <li class="list-inline-item">
-    <a href="https://www.instagram.com/{{ site.social-network-links.instagram }}" title="Instagram">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://www.instagram.com/{{ site.social-network-links.instagram }}"  class="svg-icon-md" title="Instagram">
+      {% include svg/fontawesome/instagram.svg %}
       <span class="sr-only">Instagram</span>
    </a>
   </li>
@@ -158,11 +119,8 @@
 
 {%- if site.social-network-links.youtube -%}
   <li class="list-inline-item">
-    <a href="https://www.youtube.com/{{ site.social-network-links.youtube }}" title="YouTube">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://www.youtube.com/{{ site.social-network-links.youtube }}" class="svg-icon-md" title="YouTube">
+      {% include svg/fontawesome/youtube.svg %}
       <span class="sr-only">YouTube</span>
    </a>
   </li>
@@ -170,11 +128,8 @@
 
 {%- if site.social-network-links.spotify -%}
   <li class="list-inline-item">
-    <a href="https://open.spotify.com/user/{{ site.social-network-links.spotify }}" title="Spotify">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://open.spotify.com/user/{{ site.social-network-links.spotify }}" class="svg-icon-md" title="Spotify">
+      {% include svg/fontawesome/spotify.svg %}
       <span class="sr-only">Spotify</span>
    </a>
   </li>
@@ -182,11 +137,8 @@
 
 {%- if site.social-network-links.telephone -%}
   <li class="list-inline-item">
-    <a href="tel:{{ site.social-network-links.telephone }}" title="Phone">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-phone fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="tel:{{ site.social-network-links.telephone }}" class="svg-icon-md" title="Phone">
+      {% include svg/fontawesome/phone.svg %}
       <span class="sr-only">Phone</span>
    </a>
   </li>
@@ -194,11 +146,8 @@
 
 {%- if site.social-network-links.steam -%}
   <li class="list-inline-item">
-    <a href="https://steamcommunity.com/id/{{ site.social-network-links.steam }}" title="Steam">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-steam fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://steamcommunity.com/id/{{ site.social-network-links.steam }}" class="svg-icon-md" title="Steam">
+      {% include svg/fontawesome/steam.svg %}
       <span class="sr-only">Steam</span>
    </a>
   </li>
@@ -206,11 +155,8 @@
 
 {%- if site.social-network-links.twitch -%}
   <li class="list-inline-item">
-    <a href="https://www.twitch.tv/{{ site.social-network-links.twitch }}" title="Twitch">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-twitch fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://www.twitch.tv/{{ site.social-network-links.twitch }}" class="svg-icon-md" title="Twitch">
+      {% include svg/fontawesome/twitch.svg %}
       <span class="sr-only">Twitch</span>
    </a>
   </li>
@@ -218,11 +164,8 @@
 
 {%- if site.social-network-links.yelp -%}
   <li class="list-inline-item">
-    <a href="https://{{ site.social-network-links.yelp }}.yelp.com" title="Yelp">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-yelp fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://{{ site.social-network-links.yelp }}.yelp.com" class="svg-icon-md" title="Yelp">
+      {% include svg/fontawesome/yelp.svg %}
       <span class="sr-only">Yelp</span>
    </a>
   </li>
@@ -230,11 +173,8 @@
 
 {%- if site.social-network-links.mastodon -%}
   <li class="list-inline-item">
-    <a href="https://{{ site.social-network-links.mastodon }}" title="Mastodon">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-mastodon fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://{{ site.social-network-links.mastodon }}" class="svg-icon-md" title="Mastodon">
+      {% include svg/fontawesome/mastodon.svg %}
       <span class="sr-only">Mastodon</span>
     </a>
   </li>
@@ -242,11 +182,8 @@
 
 {%- if site.social-network-links.ORCID -%}
  <li class="list-inline-item">
-   <a href="https://orcid.org/{{ site.social-network-links.ORCID }}" title="ORCID">
-     <span class="fa-stack fa-lg" aria-hidden="true">
-       <i class="fas fa-circle fa-stack-2x"></i>
-       <i class="fab fa-orcid fa-stack-1x fa-inverse"></i>
-     </span>
+   <a href="https://orcid.org/{{ site.social-network-links.ORCID }}" class="svg-icon-md" title="ORCID">
+     {% include svg/fontawesome/orcid.svg %}
      <span class="sr-only">ORCID</span>
    </a>
  </li>
@@ -254,11 +191,8 @@
 
 {%- if site.social-network-links.google-scholar -%}
   <li class="list-inline-item">
-    <a href="https://scholar.google.com/{{ site.social-network-links.google-scholar }}" title="Google Scholar">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://scholar.google.com/{{ site.social-network-links.google-scholar }}" class="svg-icon-md" title="Google Scholar">
+      {% include svg/fontawesome/graduation-cap.svg %}
       <span class="sr-only">Google Scholar</span>
     </a>
   </li>
@@ -266,11 +200,8 @@
 
 {%- if site.social-network-links.patreon -%}
   <li class="list-inline-item">
-    <a href="https://patreon.com/{{ site.social-network-links.patreon }}" title="Patreon">
-      <span class="fa-stack fa-lg" aria-hidden="true">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fab fa-patreon fa-stack-1x fa-inverse"></i>
-      </span>
+    <a href="https://patreon.com/{{ site.social-network-links.patreon }}" class="svg-icon-md" title="Patreon">
+      {% include svg/fontawesome/patreon.svg %}
       <span class="sr-only">Patreon</span>
     </a>
   </li>
