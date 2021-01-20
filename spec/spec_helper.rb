@@ -2,6 +2,8 @@
 
 require 'capybara/rspec'
 
+QUERY_SKIP_PARAM='_noga=1' # parameters used to skip Google Analytics
+
 Capybara.configure do |config|
   config.default_driver = :selenium_headless
   config.app_host = 'https://www.blocknot.es'
