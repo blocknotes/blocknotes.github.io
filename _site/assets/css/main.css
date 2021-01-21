@@ -23,6 +23,16 @@ pre, code {
   font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 
+.footer-links a.svg-icon-md {
+  background: #404040;
+  border-radius: 26px;
+  color: #fff;
+  display: inline-block;
+  line-height: 16px;
+  margin: 0 5px;
+  padding: 13px;
+}
+
 .navlinks-children {
   background: #fff;
 }
@@ -37,6 +47,21 @@ pre, code {
   margin-bottom: 4rem;
 }
 
+.svg-icon >svg {
+  height: 16px;
+  width: 16px;
+}
+
+.svg-icon-lg >svg {
+  height: 30px;
+  width: 30px;
+}
+
+.svg-icon-md >svg {
+  height: 22px;
+  width: 22px;
+}
+
 .twitter-box {
   border: 1px solid #cde;
   position: fixed;
@@ -45,6 +70,7 @@ pre, code {
 }
 
 #adsense {
+  /* border: 1px dashed #ccc; */
   /* background: rgba(0, 0, 0, 0.1); */
   min-height: 100%;
   /* border-bottom: 2px solid rgba( 0, 0, 0, 0.3 ); */
