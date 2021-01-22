@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
+require 'open-uri'
+
 describe 'check links in sitemap', type: :feature do
-  links = File.readlines('_site/sitemap.xml').select { |line| line.start_with? '<loc>' }
+  sitemap = URI.open("#{Capybara.app_host}/sitemap.xml").read
+  links = sitemap.split("\n").select { |line| line.start_with? '<loc>' }
   links.each do |loc|
     tokens = loc.match(%r{<loc>(.+)</loc>})
     page_url = tokens ? tokens[1] : nil
