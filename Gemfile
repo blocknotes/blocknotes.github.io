@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 4.0.0'
+gem 'jekyll', '~> 4.2.0'
 
 group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.12'
@@ -11,6 +11,7 @@ group :jekyll_plugins do
 end
 
 gem 'capybara'
+# gem 'pry-rails'
 gem 'rspec'
 gem 'rspec_junit_formatter'
 gem 'selenium-webdriver'
