@@ -74,6 +74,8 @@ pre, code {
 }
 
 #adsense {
+  text-align: center;
+  margin-top: 40px;
   /* border: 1px dashed #ccc; */
   /* background: rgba(0, 0, 0, 0.1); */
   min-height: 100%;

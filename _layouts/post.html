@@ -6,11 +6,7 @@ layout: base
 
 <div class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
   <div class="row">
-    <div class="col-xl-4 col-lg-2 order-1 order-md-2">
-      {% include custom/adsense_body.html %}
-    </div>
-
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 col-lg-10 {% endif %} order-2 order-md-1">
+    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
       {% if page.gh-repo %}
         {% assign gh_split =  page.gh-repo | split:'/'  %}
         {% assign gh_user =  gh_split[0]  %}
