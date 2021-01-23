@@ -1,7 +1,9 @@
 ---
 title: 'A Telegram bot server in Ruby'
-image: /assets/img/img-ruby.jpg
 tags: project ruby
+image: /assets/img/img-ruby.jpg
+share-img: /assets/img/img-ruby_md.jpg
+thumbnail-img: /assets/img/img-ruby_sm.jpg
 excerpt: A Telegram Bot server in Ruby on Heroku using webhooks
 ---
 
@@ -54,3 +56,5 @@ debug exceptions easily.
 Bot testing screenshot:
 
 ![bot screenshot](/assets/img/screenshot-telegram-bot-server-in-ruby.png)
+
+Feel free to leave me a comment to improve this project.

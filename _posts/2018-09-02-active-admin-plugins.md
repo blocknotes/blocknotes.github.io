@@ -1,7 +1,9 @@
 ---
 title: 'Active Admin plugins'
-image: /assets/img/img-activeadmin.png
 tags: project ruby web
+image: /assets/img/img-activeadmin.png
+share-img: /assets/img/img-activeadmin_md.png
+thumbnail-img: /assets/img/img-activeadmin_sm.png
 excerpt: New plugins for Active Admin, my favorite backend tool
 ---
 

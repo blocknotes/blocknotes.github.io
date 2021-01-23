@@ -1,7 +1,9 @@
 ---
 title: 'Grape projects'
-image: /assets/img/img-grape.png
 tags: project ruby web
+image: /assets/img/img-grape.png
+share-img: /assets/img/img-grape_md.png
+thumbnail-img: /assets/img/img-grape_sm.png
 excerpt: Have you ever tried Grape? I found it a very nice alternative for small-medium Ruby projects
 ---
 

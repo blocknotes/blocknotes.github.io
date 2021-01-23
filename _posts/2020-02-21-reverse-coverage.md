@@ -1,8 +1,10 @@
 ---
 title: 'Reverse Coverage: Find which tests execute which lines of code'
-image: /assets/img/img-rspec.png
 tags: project rspec ruby testing
-excerpt: Our new tool, Reverse Coverage, allows you to find out which tests execute which lines of code. Learn all about it in this blog post!
+image: /assets/img/img-rspec.png
+share-img: /assets/img/img-rspec_md.png
+thumbnail-img: /assets/img/img-rspec_sm.png
+excerpt: Reverse Coverage allows you to find out which tests execute which lines of code
 canonical: 'https://nebulab.it/blog/reverse-coverage/'
 ---
 
@@ -102,5 +104,4 @@ open-source. **It works with Ruby and Rails projects using RSpec test suite**.
 - Project page: [Reverse Coverage](https://github.com/nebulab/reverse_coverage)
 - Authors: [Daniele Palombo](https://github.com/DanielePalombo) and [Mattia Roccoberton](https://github.com/blocknotes)
 
-Please leave a comment if you would like to suggest changes or improvements to 
-this project.
+Feel free to leave me a comment to improve this project.

@@ -1,7 +1,9 @@
 ---
 title: 'Site restyle with Jekyll'
-image: /assets/img/img-jekyll.png
 tags: news ruby
+image: /assets/img/img-jekyll.png
+share-img: /assets/img/img-jekyll_md.png
+thumbnail-img: /assets/img/img-jekyll_sm.png
 excerpt: A new Jekyll website
 ---
 

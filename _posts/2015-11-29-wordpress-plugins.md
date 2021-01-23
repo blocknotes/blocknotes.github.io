@@ -1,7 +1,9 @@
 ---
 title: 'WordPress plugins'
-image: /assets/img/img-news.png
 tags: project php
+image: /assets/img/img-news.png
+share-img: /assets/img/img-news_md.png
+thumbnail-img: /assets/img/img-news_sm.png
 excerpt: Some new WordPress plugins
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: 'New site'
-image: /assets/img/img-news.png
 tags: news website
+image: /assets/img/img-news.png
+share-img: /assets/img/img-news_md.png
+thumbnail-img: /assets/img/img-news_sm.png
 excerpt: A new Grav website
 ---
 

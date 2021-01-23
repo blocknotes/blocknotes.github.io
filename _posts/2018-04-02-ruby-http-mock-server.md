@@ -1,7 +1,9 @@
 ---
 title: 'Ruby http-mock-server'
-image: /assets/img/img-sinatra.jpg
 tags: project ruby web
+image: /assets/img/img-sinatra.jpg
+share-img: /assets/img/img-sinatra_md.jpg
+thumbnail-img: /assets/img/img-sinatra_sm.jpg
 excerpt: An HTTP Mock Server based on Sinatra
 ---
 

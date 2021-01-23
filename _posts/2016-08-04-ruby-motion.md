@@ -1,7 +1,9 @@
 ---
 title: 'A glance at RubyMotion'
-image: /assets/img/img-news.png
 tags: ruby mobile
+image: /assets/img/img-ruby.jpg
+share-img: /assets/img/img-ruby_md.jpg
+thumbnail-img: /assets/img/img-ruby_sm.jpg
 excerpt: Write cross-platform apps for iOS, Android and OS X in Ruby
 ---
 

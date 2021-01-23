@@ -1,7 +1,9 @@
 ---
 title: 'Administrate Materialize Theme'
-image: /assets/img/img-ruby.jpg
 tags: project ruby admin
+image: /assets/img/img-ruby.jpg
+share-img: /assets/img/img-ruby_md.jpg
+thumbnail-img: /assets/img/img-ruby_sm.jpg
 excerpt: A Material theme for Administrate based on Materialize framework
 ---
 
@@ -19,3 +21,5 @@ the framework via SCSS variables.
 Please take a look at the project on [GitHub](https://github.com/blocknotes/administrate-materialize-theme) and feel free to leave comments about it.
 
 ![screenshot](/assets/img/screenshot-administrate-materialize-theme.png)
+
+Feel free to leave me a comment to improve this project.

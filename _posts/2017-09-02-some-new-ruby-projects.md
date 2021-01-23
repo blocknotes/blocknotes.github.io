@@ -1,7 +1,9 @@
 ---
 title: 'Some new Ruby projects'
-image: /assets/img/img-ruby.jpg
 tags: project ruby
+image: /assets/img/img-ruby.jpg
+share-img: /assets/img/img-ruby_md.jpg
+thumbnail-img: /assets/img/img-ruby_sm.jpg
 excerpt: Here are some new Ruby projects that I prepared recently
 ---
 

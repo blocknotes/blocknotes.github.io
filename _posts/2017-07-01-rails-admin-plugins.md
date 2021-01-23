@@ -1,7 +1,9 @@
 ---
 title: 'RailsAdmin plugins'
-image: /assets/img/img-ruby-on-rails.png
 tags: project ruby rails web
+image: /assets/img/img-ruby-on-rails.png
+share-img: /assets/img/img-ruby-on-rails_md.png
+thumbnail-img: /assets/img/img-ruby-on-rails_sm.png
 excerpt: In the last months I published some plugins for RailsAdmin, I hope you will find something useful :)
 ---
 

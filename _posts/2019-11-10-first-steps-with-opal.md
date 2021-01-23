@@ -1,7 +1,9 @@
 ---
 title: 'First steps with Opal 1.0'
-image: /assets/img/img-ruby.jpg
 tags: project ruby
+image: /assets/img/img-ruby.jpg
+share-img: /assets/img/img-ruby_md.jpg
+thumbnail-img: /assets/img/img-ruby_sm.jpg
 ---
 
 Recently I have spent some time doing experiments with [Opal rb](https://github.com/opal/opal#readme) 1.0, to use Ruby in place of Javascript.\
@@ -104,3 +106,5 @@ To access to the exported method in another file:
 Native(`exports`).test1
 ```
 <br/>
+
+Feel free to leave me a comment to improve this post.

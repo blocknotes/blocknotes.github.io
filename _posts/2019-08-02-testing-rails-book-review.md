@@ -1,7 +1,9 @@
 ---
 title: 'Rails testing tips for newcomers'
-image: /assets/img/img-rspec.png
 tags: ruby rails testing
+image: /assets/img/img-rspec.png
+share-img: /assets/img/img-rspec_md.png
+thumbnail-img: /assets/img/img-rspec_sm.png
 excerpt: Writing effective tests is tricky. A good book that can be helpful is Testing Rails by Thoughtbot
 canonical: 'https://nebulab.it/blog/testing-rails-book-review/'
 ---

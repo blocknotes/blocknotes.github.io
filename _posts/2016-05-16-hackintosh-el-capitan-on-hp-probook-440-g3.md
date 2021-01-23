@@ -1,7 +1,9 @@
 ---
 title: Hackintosh El Capitan on hp-probook 440 g3
-image: /assets/img/img-news.png
 tags: hardware
+image: /assets/img/img-news.png
+share-img: /assets/img/img-news_md.png
+thumbnail-img: /assets/img/img-news_sm.png
 excerpt: I have just finished to install OSX 10.11 on my HP probook
 ---
 

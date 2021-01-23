@@ -1,7 +1,9 @@
 ---
 title: 'sinatra-rest-api: Sinatra API generator'
-image: /assets/img/img-sinatra.jpg
 tags: project ruby web
+image: /assets/img/img-sinatra.jpg
+share-img: /assets/img/img-sinatra_md.jpg
+thumbnail-img: /assets/img/img-sinatra_sm.jpg
 excerpt: A Sinatra component that generates CRUD routes for database ORM models
 ---
 

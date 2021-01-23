@@ -1,7 +1,9 @@
 ---
 title: 'pinfo-rails: information from a Rails project'
-image: /assets/img/img-ruby-on-rails.png
 tags: project ruby rails
+image: /assets/img/img-ruby-on-rails.png
+share-img: /assets/img/img-ruby-on-rails_md.png
+thumbnail-img: /assets/img/img-ruby-on-rails_sm.png
 excerpt: A small utility to fetch informations from a Ruby on Rails project
 ---
 

@@ -51,6 +51,11 @@ pre, code {
   margin-bottom: 4rem;
 }
 
+.post-image.post-image-short {
+  height: 6rem;
+  width: 6rem;
+}
+
 .svg-icon >svg {
   height: 16px;
   width: 16px;

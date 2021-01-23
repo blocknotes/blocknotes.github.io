@@ -1,7 +1,9 @@
 ---
 title: 'Kemal REST API library'
-image: /assets/img/img-crystal.png
 tags: project crystal
+image: /assets/img/img-crystal.png
+share-img: /assets/img/img-crystal_md.png
+thumbnail-img: /assets/img/img-crystal_sm.png
 excerpt: I'm going on with Crystal, it's Kemal time :)
 ---
 

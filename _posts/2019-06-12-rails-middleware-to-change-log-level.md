@@ -1,7 +1,9 @@
 ---
 title: 'A Rails middleware to change log level at runtime'
-image: /assets/img/img-ruby-on-rails.png
 tags: ruby rails
+image: /assets/img/img-ruby-on-rails.png
+share-img: /assets/img/img-ruby-on-rails_md.png
+thumbnail-img: /assets/img/img-ruby-on-rails_sm.png
 excerpt: Have you ever found the Rails logs too verbose in development? Here it is a small middleware to do it
 canonical: 'https://nebulab.it/blog/rails-middleware-change-log-level/'
 ---

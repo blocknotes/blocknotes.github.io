@@ -1,7 +1,9 @@
 ---
 title: 'Starter project: Rails Vue example'
-image: /assets/img/img-vuejs.png
 tags: ruby rails vue.js
+image: /assets/img/img-vuejs.png
+share-img: /assets/img/img-vuejs_md.png
+thumbnail-img: /assets/img/img-vuejs_sm.png
 excerpt: A small project to use Vue.js in a Ruby on Rails webapp
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: 'Rails components'
-image: /assets/img/img-ruby-on-rails.png
 tags: project ruby rails web
+image: /assets/img/img-ruby-on-rails.png
+share-img: /assets/img/img-ruby-on-rails_md.png
+thumbnail-img: /assets/img/img-ruby-on-rails_sm.png
 excerpt: Here are some new Rails components!
 ---
 

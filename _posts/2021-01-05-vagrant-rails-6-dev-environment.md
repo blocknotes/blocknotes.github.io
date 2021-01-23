@@ -1,11 +1,12 @@
 ---
 title: 'Vagrant Rails 6 dev environment setup'
-image: /assets/img/img-ruby-on-rails.png
 tags: ruby rails
-excerpt: Setup Ruby on Rails development using Vagrant
+image: /assets/img/img-ruby-on-rails.png
+share-img: /assets/img/img-ruby-on-rails_md.png
+thumbnail-img: /assets/img/img-ruby-on-rails_sm.png
+excerpt: Setup a Ruby on Rails development environment using Vagrant
 ---
 
-Good news, everyone!<br/>
 Recently I made some experiments to setup a Rails 6 dev environment using Vagrant.<br/>
 I started from [rails/rails-dev-box](https://github.com/rails/rails-dev-box) and applied some changes.
 
@@ -224,3 +225,9 @@ end
 - Watch for changes (in another shell): `vagrant rsync-auto`
 - Stop the machine: `vagrant halt`
 - Destroy the machine (and delete the VM): `vagrant destroy`
+
+## Conclusion
+
+Preparing a good dev enviroment takes some time to tune the right options but when it's ready it is pretty comfortable also when you need to share the machine configuration with other developers.
+
+Feel free to leave me a comment to improve this post.
