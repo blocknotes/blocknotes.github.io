@@ -59,6 +59,8 @@
     {% endfor %}
   {% endif %}
 
+  {% include custom/styles.html %}
+
   {% if site.site-css %}
     {% for css in site.site-css %}
       <link rel="stylesheet" href="{{ css | relative_url }}">

@@ -220,6 +220,7 @@ exclude:
   - Procfile
   - README.md
   - spec
+  - src
 
 plugins:
   - jekyll-paginate

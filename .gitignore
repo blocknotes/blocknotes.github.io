@@ -11,4 +11,6 @@ Thumbs.db
 ehthumbs.db
 
 # misc
-/test_results/
+.cache/
+node_modules/
+test_results/

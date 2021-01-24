@@ -18,6 +18,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin-top: 2.2rem;
 }
 
 pre, code {
@@ -95,11 +96,11 @@ pre, code {
   bottom: 0;
   width: 100%; */
 }
-#adsense > ins {
-  /* text-align: center; */
-}
-#adsense > .btn-close {
-  /* background: #eee;
+/* #adsense > ins {
+  text-align: center;
+} */
+/* #adsense > .btn-close {
+  background: #eee;
   box-shadow: 1px 1px #222;
   cursor: pointer;
   font-size: 14px;
@@ -107,8 +108,8 @@ pre, code {
   padding: 0 6px;
   position: absolute;
   right: 5px;
-  top: 5px; */
-}
+  top: 5px;
+} */
 
 #photos {
   column-count: 4;
