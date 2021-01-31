@@ -11,7 +11,8 @@ group :jekyll_plugins do
 end
 
 gem 'capybara'
-# gem 'pry-rails'
 gem 'rspec'
 gem 'rspec_junit_formatter'
 gem 'selenium-webdriver'
+
+# gem 'pry'
