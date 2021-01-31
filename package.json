@@ -10,6 +10,11 @@
   },
   "scripts": {
     "dev": "parcel serve src/scripts.html",
-    "build": "rm -f assets/main.*.js* assets/main.*.css* && parcel build --out-dir assets --public-url '/assets' src/scripts.html src/styles.html && mv assets/scripts.html assets/styles.html _includes/custom/"
+    "clean": "rm -f assets/main.*",
+    "build_css": "parcel build --no-source-maps --out-dir assets assets/src/css/main.css",
+    "watch_css": "parcel watch --no-source-maps --no-hmr --out-dir assets assets/src/css/main.css",
+    "build_js": "parcel build --no-source-maps --out-dir assets assets/src/js/main.js",
+    "watch_js": "parcel watch --no-source-maps --no-hmr --out-dir assets assets/src/js/main.js",
+    "build": "yarn run build_css && yarn run build_js"
   }
 }

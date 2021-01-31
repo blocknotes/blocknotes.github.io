@@ -211,6 +211,7 @@ defaults:
 
 # Exclude these files from production site
 exclude:
+  - .cache
   - CHANGELOG.md
   - CNAME
   - Dockerfile
@@ -219,6 +220,7 @@ exclude:
   - LICENSE
   - Procfile
   - README.md
+  - assets/src
   - spec
   - src
 
