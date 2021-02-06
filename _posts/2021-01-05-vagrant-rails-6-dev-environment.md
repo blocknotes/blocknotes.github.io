@@ -230,4 +230,6 @@ end
 
 Preparing a good dev enviroment takes some time to tune the right options but when it's ready it is pretty comfortable also when you need to share the machine configuration with other developers.
 
+If you are curious, take a look also to this post about setting up a [Docker Rails 6 dev environment](/2021-02-06-docker-rails-6-dev-environment/).
+
 Feel free to leave me a comment to improve this post.
