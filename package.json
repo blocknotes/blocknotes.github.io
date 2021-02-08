@@ -1,0 +1,19 @@
+{
+  "name": "blocknot.es",
+  "version": "1.0.0",
+  "main": "src/js/main.js",
+  "repository": "https://github.com/blocknotes/blocknotes.github.io",
+  "author": "Mattia Roccoberton <mat@blocknot.es>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "build_css": "parcel build --no-source-maps --log-level 2 --out-dir assets src/css/main.css",
+    "build_js": "parcel build --no-source-maps --log-level 2 --out-dir assets src/js/main.js",
+    "build": "yarn run build_css && yarn run build_js"
+  },
+  "dependencies": {
+    "fslightbox": "^3.2.3"
+  }
+}

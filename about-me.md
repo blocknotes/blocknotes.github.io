@@ -10,4 +10,10 @@ I like to spend my spare time testing new software components and creating apps 
 
 My DSLR experiments:
 
-<div id="photos"><div class='gallery-item'><a href="/assets/img/photo/decor.jpg" rel="lightbox"><img src="/assets/img/photo/decor_.jpg"/></a></div><div class='gallery-item'><a href="/assets/img/photo/easter.jpg" rel="lightbox"><img src="/assets/img/photo/easter_.jpg"/></a></div><div class='gallery-item'><a href="/assets/img/photo/field.jpg" rel="lightbox"><img src="/assets/img/photo/field_.jpg"/></a></div><div class='gallery-item'><a href="/assets/img/photo/fog.jpg" rel="lightbox"><img src="/assets/img/photo/fog_.jpg"/></a></div><div class='gallery-item'><a href="/assets/img/photo/sky_mountains.jpg" rel="lightbox"><img src="/assets/img/photo/sky_mountains_.jpg"/></a></div><div class='gallery-item'><a href="/assets/img/photo/stairway.jpg" rel="lightbox"><img src="/assets/img/photo/stairway_.jpg"/></a></div><div class='gallery-item'><a href="/assets/img/photo/sun_lamp.jpg" rel="lightbox"><img src="/assets/img/photo/sun_lamp_.jpg"/></a></div></div>
+<div id="photos">
+{% for file in site.static_files %}
+  {% if file.path contains "photo" and file.name contains "_preview" -%}
+    <div class="gallery-item"><a href="{{ file.path | remove: '_preview' }}" data-fslightbox="gallery"><img src="{{ file.path }}"/></a></div>
+  {%- endif %}
+{% endfor %}
+</div>
