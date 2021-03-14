@@ -8,6 +8,8 @@ I'm Mat, a software developer.
 
 I like to spend my spare time testing new software components and creating apps for web / Android / Windows / Linux / Arduino. The purpose of this site is to share interesting things to everyone interested. Feel free to contact me for tips, questions or just a “hi”
 
+{% include custom/paypal_dontate.html %}
+
 My DSLR experiments:
 
 <div id="photos">
