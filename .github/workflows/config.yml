@@ -1,7 +1,7 @@
 name: blocknot.es tests
 
 env:
-  RUBY_VERSION: 2.6.6
+  RUBY_VERSION: 2.7.3
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Ruby 2.6
+      - name: Set up Ruby 2.7
         uses: actions/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
