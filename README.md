@@ -1,4 +1,4 @@
-# blocknot.es [![CircleCI](https://circleci.com/gh/blocknotes/blocknotes.github.io.svg?style=svg)](https://circleci.com/gh/blocknotes/blocknotes.github.io)
+# blocknot.es
 
 - _Project URL_: blocknotes.github.io
 - _Site URL_: www.blocknot.es
