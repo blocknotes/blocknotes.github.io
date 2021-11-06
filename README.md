@@ -4,4 +4,10 @@
 - _Site URL_: www.blocknot.es
 
 ## Build
-**Important note**: before using `jekyll build` (or serve) it's necessary to run `yarn build` in order to compile the static CSS and JS files.
+
+- Compile CSS and JS sources: `yarn build`
+- Build: `bin/jekyll build`
+
+## Serve
+
+`bin/jekyll serve --no-watch --host ice1.test1.cloud --port 9292`
