@@ -11,7 +11,8 @@
   "scripts": {
     "build_css": "parcel build --no-source-maps --log-level 2 --out-dir assets src/css/main.css",
     "build_js": "parcel build --no-source-maps --log-level 2 --out-dir assets src/js/main.js",
-    "build": "yarn run build_css && yarn run build_js"
+    "build": "yarn run build_css && yarn run build_js",
+    "serve": "bin/jekyll serve --no-watch --host ice1.test1.cloud --port 9292"
   },
   "dependencies": {
     "fslightbox": "^3.2.3"
